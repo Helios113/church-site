@@ -59,11 +59,11 @@ blockquote > p {
 }
 
 a {
-  color: #007bff; // Change this to your desired color
+  color: #EE5B25; // Change this to your desired color
   text-decoration: none;
 
   &:hover {
-    color: #0056b3; // Change this to your desired hover color
+    color: #bf471c; // Change this to your desired hover color
     text-decoration: underline;
   }
 }
@@ -93,17 +93,27 @@ a {
   background-color: #f1f1f1;
 }
 
+
 .service-banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f9fa; // Change this to your desired background color
+  // color: ;
   padding: 10px 20px;
   border-radius: 5px;
   margin: 20px auto;
-  max-width: 400px;
   text-align: center;
   font-size: 1.2em;
   font-weight: bold;
-  color: #333; // Change this to your desired text color
+  background-color: #EE5B25;
+  @apply text-white dark:bg-orange-900 font-primary leading-relaxed dark:text-darkmode-text
+}
+
+.blurred {
+  // @apply text-base bg-opacity-40 dark:bg-darkmode-bg
+  -webkit-backdrop-filter: blur(5px); 
+  backdrop-filter: blur(5px); 
+  padding: 20px 30px;
+  @apply dark:bg-dark dark:bg-opacity-30
+
 }
