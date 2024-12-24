@@ -126,7 +126,7 @@
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
   {{ if .backgroundImage }}
-    <section class="section-sm bg -image bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }}); ">
+    <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }}); ">
   {{ else }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
   {{ end }}
