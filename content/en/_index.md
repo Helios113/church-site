@@ -51,7 +51,7 @@ socials:
       icon: fa-brands fa-youtube
       link: https://www.youtube.com/@ecchaskovo
 features:
-  - title: "Join us this week!"
+  - title: "Evangelical Congregational Church"
     backgroundImage: "/images/hero.jpg"
     content: 'We meet at [47 Dobruja St., Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     bulletpoints:
@@ -61,6 +61,7 @@ features:
       link: "#"
     table:
       title: "Services"
+      content: "Our gatherings are a great place to explore the Christian faith and meet fellow believers."
       header: ["Day", "Service", "Time"]
       rows: [
         columns: ["Tuesday","Prayer Meeting", "18:00"],

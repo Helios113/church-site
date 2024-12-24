@@ -88,10 +88,13 @@ a {
 .schedule-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-
-.schedule-table tr:hover {
-  background-color: #f1f1f1;
+.schedule-table tr:nth-child(odd) {
+  background-color: #d1cdcd;
 }
+
+// .schedule-table tr:hover {
+//   background-color: #f1f1f1;
+// }
 
 
 .service-banner {
@@ -114,6 +117,6 @@ a {
   -webkit-backdrop-filter: blur(5px); 
   backdrop-filter: blur(5px); 
   padding: 20px 30px;
-  @apply dark:bg-dark dark:bg-opacity-30
+  @apply bg-white bg-opacity-40 dark:bg-dark dark:bg-opacity-40
 
 }

@@ -53,7 +53,7 @@ socials:
       icon: fa-brands fa-youtube
       link: https://www.youtube.com/@ecchaskovo
 features:
-  - title: "Заповядайте при нас тази седмица!"
+  - title: "Евангелска Съборна Църква"
     content: 'Ние се срещаме на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     backgroundImage: "/images/hero.jpg"
     bulletpoints:
@@ -63,6 +63,7 @@ features:
       link: "#"
     table:
       title: "Богослужения"
+      content: "Нашите събирания са чудесно място да проучиш християнската вяра и да се запознаеш със събратя по вяра."
       header: ["Ден", "Служба", "Час"]
       rows: [
         columns: ["Вторник","Молитвено събрание", "18ч"],

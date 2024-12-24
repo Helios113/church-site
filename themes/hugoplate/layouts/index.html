@@ -133,6 +133,78 @@
   {{ end }}
       <div class="container">
         <div class="row items-center justify-between">
+          <div class="row justify-center">
+            <div class="lg:col-7 md:col-9 mb-8 text-center">
+              <h1 class="mb-4 text-h3 lg:text-h1">
+                {{ .title | markdownify }}
+              </h1>
+              <p class="mb-8">
+                {{ .content | markdownify }}
+              </p>
+            <ul>
+              {{ range .bulletpoints }}
+                <li class="relative mb-4 pl-6">
+                  {{/*  <i class="fa fa-check absolute left-0 top-1.5"></i>  */}}
+                  {{ . | markdownify }}
+                </li>
+              {{ end }}
+            </ul>
+            {{ with .button }}
+              {{ if .enable }}
+                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                  {{ .label }}
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+            {{/*  make a table to display a service schedule from a yaml file  */}}
+            {{ with .table }}
+              <h3 class="mt-8 mb-4">
+                {{ .title | markdownify }}
+              </h3>
+              <p class="mt-8 mb-4 text-left">
+                {{ .content | markdownify }}
+              </p>
+              <table class="table mt-6 schedule-table">
+                <thead>
+                  <tr>
+                    {{ range .header }}
+                      <th>{{ . }}</th>
+                    {{ end }}
+                  </tr>
+                </thead>
+                <tbody>
+                  {{ range .rows }}
+                    <tr>
+                      {{ range .columns }}
+                        <td>{{ . }}</td>
+                      {{ end }}
+                    </tr>
+                  {{ end }}
+                </tbody>
+              </table>
+            {{ end }}
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    {{ if .backgroundImage }}
+      </div>
+      {{ end }}
+  {{ end }}
+  <!-- /Features -->
+
+
+  {{ range $i, $e:= .Params.features1 }}
+  {{ if .backgroundImage }}
+    <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }});">
+      <div class="blurred">
+      {{ else }}
+    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+  {{ end }}
+      <div class="container">
+        <div class="row items-center justify-between">
           <div
             class="mb:md-0 {{ if not (modBool $i 2) }}
               md:order-2
@@ -141,6 +213,7 @@
             {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
             {{ end }}
           </div>
+          
           <div
             class="{{ if not (modBool $i 2) }}
               md:order-1
