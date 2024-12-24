@@ -1,6 +1,15 @@
 ################ English language ##################
 [en]
-languageName = "En"
-languageCode = "en-us"
-contentDir = "content/english"
+title = "Christian Church"
+languageName = "🇬🇧"
+languageCode = "en-gb"
+contentDir = "content/en"
+weight = 2
+
+################ English language ##################
+[bg]
+title = "Християнска църква"
+languageName = "🇧🇬"
+languageCode = "bg"
+contentDir = "content/bg"
 weight = 1

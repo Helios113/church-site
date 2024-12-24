@@ -1,4 +1,60 @@
 {{ define "main" }}
+
+  {{ with .Params.dates }}
+  <!-- Service Date Banner -->
+  <div class="service-banner">
+    <p id="next-service-date">Loading next service date...</p>
+  </div>
+
+  <!-- Include the JavaScript -->
+  <script>
+    const services = [
+      {{ range .services }}
+      { day: "{{ .day }}", time: "{{ .time }}" },
+      {{ end }}
+    ];
+
+    function getNextServiceDate(services) {
+      const now = new Date();
+      const daysMap = {
+        "{{ .monday }}": 1,
+        "{{ .tuesday }}": 2,
+        "{{ .wednesday }}": 3,
+        "{{ .thursday }}": 4,
+        "{{ .friday }}": 5,
+        "{{ .saturday }}": 6,
+        "{{ .sunday }}": 7,
+      };
+
+      let nextService = null;
+
+      for (const service of services) {
+        const targetDay = daysMap[service.day];
+        const currentDay = now.getDay();
+        const daysUntilNext = (targetDay - currentDay + 7) % 7 || 7;
+        const nextDate = new Date(now);
+        nextDate.setDate(now.getDate() + daysUntilNext);
+        const [hours, minutes] = service.time.split(":").map(Number);
+        nextDate.setHours(hours, minutes, 0, 0);
+
+        if (!nextService || nextDate < nextService) {
+          nextService = nextDate;
+        }
+      }
+
+      return nextService;
+    }
+
+    function displayNextServiceDate() {
+      const nextServiceDate = getNextServiceDate(services);
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit',  };
+      document.getElementById("next-service-date").textContent = `{{ .text }}: ${nextServiceDate.toLocaleDateString({{ .date_format }}, options)}`;
+    }
+
+    displayNextServiceDate();
+  </script>
+  {{ end }}
+
   <!-- Banner -->
   {{ with .Params.banner }}
     <section class="section pt-14">
@@ -34,6 +90,37 @@
   {{ end }}
   <!-- /Banner -->
 
+  {{ with .Params.hero }}
+    {{/*  make hero with background image and optional additional image  */}}
+    {{/*  make the section have a background iamge style which takes the background image variable  */}}
+    <section class="section bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: {{ .backgroundImage | absURL }};">
+      <div class="container">
+        <div class="row items-center justify-between">
+          <div class="md:col-6 mb-6">
+            {{ with .image }}
+              {{ partial "image" (dict "Src" . "Alt" "Hero image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+            {{ end }}
+          </div>
+          <div class="md:col-5 lg:col-6">
+            <h2 class="mb-4">
+              {{ .title | markdownify }}
+            </h2>
+            <p class="mb-8 text-lg">
+              {{ .content | markdownify }}
+            </p>
+            {{ with .button }}
+              {{ if .enable }}
+                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                  {{ .label }}
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+  {{ end }}
+
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
@@ -58,7 +145,7 @@
             <ul>
               {{ range .bulletpoints }}
                 <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                  {{/*  <i class="fa fa-check absolute left-0 top-1.5"></i>  */}}
                   {{ . | markdownify }}
                 </li>
               {{ end }}
@@ -71,6 +158,31 @@
                 </a>
               {{ end }}
             {{ end }}
+            {{/*  make a table to display a service schedule from a yaml file  */}}
+            {{ with .table }}
+              <h3 class="mt-8 mb-4">
+                {{ .title | markdownify }}
+              </h3>
+              <table class="table mt-6 schedule-table">
+                <thead>
+                  <tr>
+                    {{ range .header }}
+                      <th>{{ . }}</th>
+                    {{ end }}
+                  </tr>
+                </thead>
+                <tbody>
+                  {{ range .rows }}
+                    <tr>
+                      {{ range .columns }}
+                        <td>{{ . }}</td>
+                      {{ end }}
+                    </tr>
+                  {{ end }}
+                </tbody>
+              </table>
+            {{ end }}
+            
           </div>
         </div>
       </div>
@@ -141,4 +253,81 @@
     {{ end }}
   {{ end }}
   <!-- /Testimonials -->
+  {{ with .Params.socials}}
+  <!-- Socials Panel -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4 text-center">{{ .title }}</h2>
+          <div class="social-icons text-center">
+            {{ range .items }}
+              <a
+                target="_blank"
+                aria-label="{{ .name }}"
+                rel="nofollow noopener"
+                href="{{ .link | safeURL }}">
+                <i class="{{ .icon }} fa-2x"></i>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Socials Panel -->
+  {{ end }}
+
+  {{ with .Params.map}}
+  <!-- Maps Panel -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4 text-center">{{ .title }}</h2>
+          <div class="map-container" style="position: relative; overflow: hidden; padding-top: 56.25%;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23743.164459614072!2d25.5132847!3d41.9380956!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ad50c13e2d8421%3A0x684a2c8e9fc28fe5!2z0JXQstCw0L3Qs9C10LvRgdC60LAg0KHRitCx0L7RgNC90LAg0KbRitGA0LrQstCwIC0g0KXQsNGB0LrQvtCy0L4!5e0!3m2!1sen!2sbg!4v1734999285883!5m2!1sen!2sbg&zoom=9"
+              width="600"
+              height="450"
+              style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              allowfullscreen=""
+              loading="lazy">
+            </iframe>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Maps Panel -->
+  {{ end }}
+
+ 
+   {{/*  <!-- Recent Posts Panel -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4 text-center">Recent Posts</h2>
+          <div class="recent-posts text-center">
+            <!-- Facebook Posts Embed -->
+            <div class="fb-page" data-href="http://www.facebook.com/100089587770848" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+              <blockquote cite="http://www.facebook.com/100089587770848" class="fb-xfbml-parse-ignore">
+                <a href="http://www.facebook.com/100089587770848">Your Page Name</a>
+              </blockquote>
+            </div>
+            <!-- Instagram Posts Embed -->
+            <div class="instagram-embed">
+              <iframe src="https://www.instagram.com/p/YourPostID/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+            <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=ecchaskovo" width="480" height="400"></iframe>
+
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>  
+  <!-- /Recent Posts Panel -->  */}}
+
 {{ end }}
+
