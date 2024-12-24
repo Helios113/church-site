@@ -19,10 +19,11 @@
 #     link: "https://github.com/zeon-studio/hugoplate"
 dates:
   services: 
-    - day: "Неделя"
-      time: "10:00"
+
     - day: "Вторник"
       time: "19:00"
+    - day: "Неделя"
+      time: "10:00"
   monday: "Понеделник"
   tuesday: "Вторник"
   wednesday: "Сряда"

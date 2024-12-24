@@ -19,11 +19,11 @@
       const daysMap = {
         "{{ .monday }}": 1,
         "{{ .tuesday }}": 2,
-        "{{ .wednesday }}": 3,
+        "{{ .wednesday }}":3,
         "{{ .thursday }}": 4,
         "{{ .friday }}": 5,
         "{{ .saturday }}": 6,
-        "{{ .sunday }}": 7,
+        "{{ .sunday }}": 0,
       };
 
       let nextService = null;
@@ -31,12 +31,14 @@
       for (const service of services) {
         const targetDay = daysMap[service.day];
         const currentDay = now.getDay();
-        const daysUntilNext = (targetDay - currentDay + 7) % 7 || 7;
+        console.log(currentDay);
+        const daysUntilNext = (targetDay - currentDay + 7) % 7;
+        
         const nextDate = new Date(now);
         nextDate.setDate(now.getDate() + daysUntilNext);
         const [hours, minutes] = service.time.split(":").map(Number);
         nextDate.setHours(hours, minutes, 0, 0);
-
+        console.log(nextDate);
         if (!nextService || nextDate < nextService) {
           nextService = nextDate;
         }
