@@ -8,18 +8,17 @@
 #     enable: true
 #     label: "Get Started For Free"
 #     link: "https://github.com/zeon-studio/hugoplate"
-hero:
-  title: "Evangelical Congregational Church"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
-  backgroundImage: "/images/banner1.jpg"
-  image: "/images/banner1.jpg"
-  button:
-    enable: true
-    label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/hugoplate"
+# hero:
+#   title: "Evangelical Congregational Church"
+#   content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
+#   backgroundImage: "/images/banner1.jpg"
+#   image: "/images/banner1.jpg"
+#   button:
+#     enable: true
+#     label: "Get Started For Free"
+#     link: "https://github.com/zeon-studio/hugoplate"
 dates:
   services: 
-
     - day: "Вторник"
       time: "19:00"
     - day: "Неделя"
@@ -31,8 +30,8 @@ dates:
   friday: "Петък"
   saturday: "Събота"
   sunday: "Неделя"
-  date_format: "bg"
-  text: "Следваща служба"
+  date_format: "en"
+  text: "Next service"
 
 map:
   title: "Map"
@@ -53,7 +52,7 @@ socials:
       link: https://www.youtube.com/@ecchaskovo
 features:
   - title: "Join us this week!"
-    image: "/images/banner1.jpg"
+    backgroundImage: "/images/hero.jpg"
     content: 'We meet at [47 Dobruja St., Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     bulletpoints:
     button:

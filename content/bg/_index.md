@@ -54,8 +54,8 @@ socials:
       link: https://www.youtube.com/@ecchaskovo
 features:
   - title: "Заповядайте при нас тази седмица!"
-    image: "/images/banner1.jpg"
     content: 'Ние се срещаме на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    backgroundImage: "/images/hero.jpg"
     bulletpoints:
     button:
       enable: false
