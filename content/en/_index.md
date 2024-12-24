@@ -19,17 +19,20 @@ hero:
     link: "https://github.com/zeon-studio/hugoplate"
 dates:
   services: 
-    - day: "Sunday"
-      time: "10:00"
-    - day: "Wednesday"
+
+    - day: "Вторник"
       time: "19:00"
-  sunday: "Sunday"
-  monday: "Monday"
-  tuesday: "Tuesday"
-  wednesday: "Wednesday"
-  thursday: "Thursday"
-  friday: "Friday"
-  saturday: "Saturday"
+    - day: "Неделя"
+      time: "10:00"
+  monday: "Понеделник"
+  tuesday: "Вторник"
+  wednesday: "Сряда"
+  thursday: "Червъртък"
+  friday: "Петък"
+  saturday: "Събота"
+  sunday: "Неделя"
+  date_format: "bg"
+  text: "Следваща служба"
 
 map:
   title: "Map"
