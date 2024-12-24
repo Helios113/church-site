@@ -126,8 +126,10 @@
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
   {{ if .backgroundImage }}
-    <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }}); ">
-  {{ else }}
+    <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }});">
+      <div style="background-color: rgba(255, 255, 255, 0.4); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); 
+  padding: 20px 30px;">
+      {{ else }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
   {{ end }}
       <div class="container">
@@ -195,6 +197,9 @@
         </div>
       </div>
     </section>
+    {{ if .backgroundImage }}
+      </div>
+      {{ end }}
   {{ end }}
   <!-- /Features -->
 
