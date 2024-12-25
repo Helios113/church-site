@@ -5,6 +5,7 @@ languageName = "🇬🇧"
 languageCode = "en-gb"
 contentDir = "content/en"
 weight = 2
+donate = "Give"
 
 ################ English language ##################
 [bg]
@@ -13,3 +14,4 @@ languageName = "🇧🇬"
 languageCode = "bg"
 contentDir = "content/bg"
 weight = 1
+donate = "Дари"

@@ -12,33 +12,44 @@ url = "/about"
 weight = 2
 
 [[main]]
-name = "Убеждения"
-url = "/beliefs"
+name = "История"
+url = "/history"
 weight = 3
 
 [[main]]
+name = "Какво е Евангелизъм?"
+url = "/evangelicalism"
 weight = 4
-name = "Pages"
 
 [[main]]
-parent = "Pages"
-name = "Blog"
-url = "/blog"
+name = "Убеждения"
+url = "/beliefs"
+weight = 5
 
 [[main]]
-parent = "Pages"
-name = "Contact"
+name = "Контакти"
 url = "/contact"
+weight = 6
 
-[[main]]
-parent = "Pages"
-name = "Authors"
-url = "/authors"
+# [[main]]
+# weight = 4
+# name = "Pages"
 
-[[main]]
-parent = "Pages"
-name = "Categories"
-url = "/categories"
+# [[main]]
+# parent = "Pages"
+# name = "Blog"
+# url = "/blog"
+
+
+# [[main]]
+# parent = "Pages"
+# name = "Authors"
+# url = "/authors"
+
+# [[main]]
+# parent = "Pages"
+# name = "Categories"
+# url = "/categories"
 
 # [[main]]
 # parent = "Pages"

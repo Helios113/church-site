@@ -19,17 +19,10 @@
 #     link: "https://github.com/zeon-studio/hugoplate"
 dates:
   services: 
-    - day: "Вторник"
+    - day: "Tuesday"
       time: "19:00"
-    - day: "Неделя"
+    - day: "Sunday"
       time: "10:00"
-  monday: "Понеделник"
-  tuesday: "Вторник"
-  wednesday: "Сряда"
-  thursday: "Червъртък"
-  friday: "Петък"
-  saturday: "Събота"
-  sunday: "Неделя"
   date_format: "en"
   text: "Next service"
 
@@ -53,11 +46,13 @@ socials:
 features:
   - title: "Evangelical Congregational Church"
     backgroundImage: "/images/hero.jpg"
-    content: 'We meet at [47 Dobruja St., Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    subtitle: ' in the heart of [Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    content: 'evangelical church where everyone is welcome'
+    # We meet at [47 Dobruja St., Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     bulletpoints:
     button:
-      enable: false
-      label: "Get Started Now"
+      enable: true
+      label: "What is Evangelicalism?"
       link: "#"
     table:
       title: "Services"

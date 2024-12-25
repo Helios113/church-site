@@ -19,18 +19,10 @@
 #     link: "https://github.com/zeon-studio/hugoplate"
 dates:
   services: 
-
-    - day: "Вторник"
+    - day: "Tuesday"
       time: "19:00"
-    - day: "Неделя"
+    - day: "Sunday"
       time: "10:00"
-  monday: "Понеделник"
-  tuesday: "Вторник"
-  wednesday: "Сряда"
-  thursday: "Червъртък"
-  friday: "Петък"
-  saturday: "Събота"
-  sunday: "Неделя"
   date_format: "bg"
   text: "Следваща служба"
 
@@ -54,12 +46,13 @@ socials:
       link: https://www.youtube.com/@ecchaskovo
 features:
   - title: "Евангелска Съборна Църква"
-    content: 'Ние се срещаме на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    subtitle: 'в сърцето на [Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    content: 'Ние сме евагелска църква която приема всички срещаме на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     backgroundImage: "/images/hero.jpg"
     bulletpoints:
     button:
-      enable: false
-      label: "Get Started Now"
+      enable: true
+      label: "Какво е Евангелство?"
       link: "#"
     table:
       title: "Богослужения"

@@ -7,7 +7,12 @@
 }
 
 .btn-primary {
-  @apply border-primary bg-primary dark:border-darkmode-primary dark:text-dark text-white dark:bg-darkmode-primary;
+  background-color: #EE5B25;
+  &:hover {
+    background-color: #c93f15;
+    color: #fff;
+  }
+  @apply text-white dark:bg-orange-900 font-primary leading-relaxed dark:text-darkmode-text
 }
 
 .btn-outline-primary {

@@ -137,3 +137,9 @@ a {
   @apply text-white dark:bg-orange-900 font-primary leading-relaxed dark:text-darkmode-text
 
 }
+
+.text-nowrap {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+}

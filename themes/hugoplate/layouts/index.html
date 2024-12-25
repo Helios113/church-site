@@ -17,13 +17,13 @@
     function getNextServiceDate(services) {
       const now = new Date();
       const daysMap = {
-        "{{ .monday }}": 1,
-        "{{ .tuesday }}": 2,
-        "{{ .wednesday }}":3,
-        "{{ .thursday }}": 4,
-        "{{ .friday }}": 5,
-        "{{ .saturday }}": 6,
-        "{{ .sunday }}": 0,
+        "Monday": 1,
+        "Tuesday": 2,
+        "wednesday":3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 0,
       };
 
       let nextService = null;
@@ -135,10 +135,13 @@
         <div class="row items-center justify-between">
           <div class="row justify-center">
             <div class="lg:col-7 md:col-9 mb-8 text-center">
-              <h1 class="mb-4 text-h3 lg:text-h1">
+              <h1 class="mb-4 text-h3 lg:text-h1 text-nowrap">
                 {{ .title | markdownify }}
               </h1>
-              <p class="mb-8">
+              <h3 class="mb-8">
+                {{ .subtitle | markdownify }}
+              </h3>
+              <p class="mb-8 text-lg">
                 {{ .content | markdownify }}
               </p>
             <ul>
