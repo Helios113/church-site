@@ -1,10 +1,10 @@
 ############# English navigation ##############
 
 # main menu
-[[main]]
-name = "Начало"
-url = "/"
-weight = 1
+# [[main]]
+# name = "Начало"
+# url = "/"
+# weight = 1
 
 [[main]]
 name = "За нас"
@@ -17,9 +17,9 @@ url = "/history"
 weight = 3
 
 [[main]]
-name = "Какво е Евангелизъм?"
+name = "Какво е Евангелство?"
 url = "/evangelicalism"
-weight = 4
+weight = 1
 
 [[main]]
 name = "Убеждения"

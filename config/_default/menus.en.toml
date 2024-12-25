@@ -1,27 +1,27 @@
 ############# English navigation ##############
 
 # main menu
-[[main]]
-name = "Home"
-url = "/"
-weight = 1
+# [[main]]
+# name = "Home"
+# url = "/"
+# weight = 1
 
 [[main]]
 name = "About"
-# url = "/about"
+url = "/about"
 weight = 2
 
 [[main]]
-parent = "About"
+# parent = "About"
 name = "History"
 url = "/history"
 weight = 3
 
 [[main]]
-parent = "About"
+# parent = "About"
 name = "What is Evangelicalism?"
 url = "/evangelicalism"
-weight = 4
+weight = 1
 
 [[main]]
 name = "Beliefs"

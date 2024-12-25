@@ -1,14 +1,15 @@
-{{ $class := .Class | default "" }}
-{{/*  {{ $pageLang := $context.Lang }}
-<script>
-    console.log("HugoPlate: donate script loaded");
-    console.log({{ $pageLang }});
-    
-</script>  */}}
+{{ $context := .Context }}
+{{ $class := .Class }}
+{{ $pageLang := $context.Lang }}
+
 <a
   class="btn btn-primary {{ $class }}"
   href="{{ site.Params.donate.link | default "https://www.example.com/donate" }}"
   target="_blank"
   rel="noopener">
-  {{ site.Params.donate | default "Дари" }}
+  {{ if eq $pageLang "bg" }}
+  Дари
+  {{ else }}
+    Give
+{{ end }}
 </a>
