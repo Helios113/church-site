@@ -131,6 +131,11 @@ baseName = "searchindex"
 isPlainText = true
 notAlternative = true
 
+[params.donate]
+enable = true
+link = "https://www.example.com/donate"
+label = "Donate"
+
 
 ############################# Plugins ##############################
 

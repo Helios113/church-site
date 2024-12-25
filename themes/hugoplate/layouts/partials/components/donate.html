@@ -1,0 +1,8 @@
+{{ $class := .Class | default "" }}
+<a
+  class="btn donate-button {{ $class }}"
+  href="{{ site.Params.donate.link | default "https://www.example.com/donate" }}"
+  target="_blank"
+  rel="noopener">
+  {{ site.Params.donate.label | default "Donate" }}
+</a>
