@@ -19,9 +19,19 @@
 
 <!-- main script -->
 {{ $scripts = $scripts | append (resources.Get "js/main.js") }}
+{{ $scripts = $scripts | append (resources.Get "js/bgt.js") }}
+
+
+{{/*  <script>
+  console.log("HugoPlate: main script loaded");
+  console.log({{ resources.Get "js/bgt.js" }})
+  console.log({{$scripts}})
+</script>  */}}
 {{ $scripts = $scripts | resources.Concat "js/script.js" }}
 
 {{ $scriptsLazy = $scriptsLazy | resources.Concat "js/script-lazy.js" }}
+
+
 
 {{ if hugo.IsProduction }}
   {{ $scripts = $scripts | minify | fingerprint }}
@@ -32,7 +42,8 @@
 <script
   crossorigin="anonymous"
   integrity="{{ $scripts.Data.Integrity }}"
-  src="{{ $scripts.RelPermalink }}"></script>
+  src="{{ $scripts.RelPermalink }}">  
+</script>
 
 {{/* scripts lazy */}}
 <script
@@ -41,6 +52,8 @@
   crossorigin="anonymous"
   integrity="{{ $scriptsLazy.Data.Integrity }}"
   src="{{ $scriptsLazy.RelPermalink }}"></script>
+
+
 
 <!-- progressive web app -->
 {{ partialCached "pwa.html" . }}

@@ -1,0 +1,17 @@
+
+
+<script>
+    {{ if hugo.IsMultilingual }}
+    {{ $context := .Context }}
+    {{ $pageLang := $context.Lang }}
+    console.log({{ $pageLang }})
+    {{ if eq $pageLang "en" }}
+    window.BGLinks.version = "NIV";
+    {{ else if eq $pageLang "bg" }}
+    window.BGLinks.version = "CBT";
+    {{ end }}
+    {{else}}
+    window.BGLinks.version = "CBT";
+    {{ end }}
+    window.BGLinks.linkVerses();
+</script>
