@@ -131,19 +131,20 @@
       {{ else }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
   {{ end }}
-      <div class="container">
+      <div class="container justify-center">
         <div class="row items-center justify-between">
-          <div class="row justify-center">
-            <div class="lg:col-9 md:col-9 mb-8 text-center">
+          <div class="row items-center justify-center">
+            <div class="lg:col-12 md:col-12 mb-8 justify-center text-center ">
               <h1 class="mb-4 text-h3 lg:text-h1">
                 {{ .title | markdownify }}
               </h1>
               <h3 class="mb-8">
                 {{ .subtitle | markdownify }}
               </h3>
-              <p class="mb-8 text-lg">
+              {{/*  Make this narrower  */}}
+              <div class="mb-8 text-center text-2xl" style="width: 75%; margin: 0 auto;">
                 {{ .content | markdownify }}
-              </p>
+              </div>
             <ul>
               {{ range .bulletpoints }}
                 <li class="relative mb-4 pl-6">
@@ -162,20 +163,29 @@
             {{ end }}
             {{/*  make a table to display a service schedule from a yaml file  */}}
             {{ with .table }}
+              {{ if .title }}
               <h3 class="mt-8 mb-4">
                 {{ .title | markdownify }}
               </h3>
+              {{ end }}
+              {{ if .content }}
               <p class="mt-8 mb-4 text-left">
                 {{ .content | markdownify }}
               </p>
+              {{ end }}
               <table class="table mt-6 schedule-table">
+                <col><col>
+                {{ with .header }}
+                {{ if .enable}}
                 <thead>
                   <tr>
-                    {{ range .header }}
+                    {{ range .values }}
                       <th>{{ . }}</th>
                     {{ end }}
                   </tr>
                 </thead>
+                {{ end }}
+                {{ end }}
                 <tbody>
                   {{ range .rows }}
                     <tr>

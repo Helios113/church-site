@@ -21,7 +21,7 @@ weight = 3
 # parent = "About"
 name = "What is Evangelicalism?"
 url = "/evangelicalism"
-weight = 1
+weight = 1  
 
 [[main]]
 name = "Beliefs"

@@ -62,6 +62,17 @@ features:
     #     columns: ["Вторник","Молитвено събрание", "18ч"],
     #     columns: ["Неделя","Литургия с проповед", "10ч"]
     # ]
+  - title: "Ще се радваме да се запознаем с вас!"
+    image: "/images/service-2.png"
+    content: "Църквата е отворена **ежедневно** за молитва, съвет или подслон. Също така организираме **седмични** молитвени събрания и богослужения."
+    # bulletpoints:
+    #   - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
+    #   - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
+    #   - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+    button:
+      enable: false
+      label: "Get Started Now"
+      link: "https://github.com/zeon-studio/hugoplate"
       
 ---
 

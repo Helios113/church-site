@@ -46,15 +46,37 @@ socials:
 features:
   - title: "Evangelical Congregational Church"
     backgroundImage: "/images/hero.jpg"
-    subtitle: ' in the heart of [Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
-    content: 'evangelical church where everyone is welcome'
+    subtitle: 'in the heart of [Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    content: 'An evangelical church where everyone is welcome.'
     # We meet at [47 Dobruja St., Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     bulletpoints:
     button:
       enable: true
       label: "What is Evangelicalism?"
       link: "#"
-    # table:
+  - title: "We would love to meet you!"
+    content: "The church is open **daily** for prayer, council or shelter. We also host **weekly** prayer meetings and worship services. Our gatherings are a great place to explore the Christian faith and meet fellow believers."
+    bulletpoints:
+    button:
+      enable: false
+      label: "Get Started Now"
+      link: "https://github.com/zeon-studio/hugoplate"
+    table:
+      title: ""
+      content: ""
+      header: 
+        enable: false
+        values: ["", ""]
+      rows: [
+        columns: ["Daily opening hours: ","09:00 - 17:00"],
+        columns: ["Prayer meeting: ","Tuseday 18:00"],
+        columns: ["Worship service: ","Sunday 10:00"],
+
+      ]
+
+
+
+# table:
     #   title: "Services"
     #   content: "Our gatherings are a great place to explore the Christian faith and meet fellow believers."
     #   header: ["Day", "Service", "Time"]
@@ -62,5 +84,5 @@ features:
     #     columns: ["Tuesday","Prayer Meeting", "18:00"],
     #     columns: ["Sunday","Liturgy with Sermon", "10:00"]
     #   ]
-      
 ---
+
