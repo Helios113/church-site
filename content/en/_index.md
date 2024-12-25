@@ -54,13 +54,13 @@ features:
       enable: true
       label: "What is Evangelicalism?"
       link: "#"
-    table:
-      title: "Services"
-      content: "Our gatherings are a great place to explore the Christian faith and meet fellow believers."
-      header: ["Day", "Service", "Time"]
-      rows: [
-        columns: ["Tuesday","Prayer Meeting", "18:00"],
-        columns: ["Sunday","Liturgy with Sermon", "10:00"]
-      ]
+    # table:
+    #   title: "Services"
+    #   content: "Our gatherings are a great place to explore the Christian faith and meet fellow believers."
+    #   header: ["Day", "Service", "Time"]
+    #   rows: [
+    #     columns: ["Tuesday","Prayer Meeting", "18:00"],
+    #     columns: ["Sunday","Liturgy with Sermon", "10:00"]
+    #   ]
       
 ---
