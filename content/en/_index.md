@@ -69,7 +69,7 @@ features:
         values: ["", ""]
       rows: [
         columns: ["Daily opening hours: ","09:00 - 17:00"],
-        columns: ["Prayer meeting: ","Tuseday 18:00"],
+        columns: ["Prayer meeting: ","Tuesday 18:00"],
         columns: ["Worship service: ","Sunday 10:00"],
 
       ]

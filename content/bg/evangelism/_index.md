@@ -10,7 +10,6 @@ draft: false
 Евангелство е течение в християнството, което се фокусира върху връщането към сърцевината на вярата: личната връзка с Бога чрез Исус Христос, следване на учението на Свещеното Писание и споделяне на благата вест с другите.
 
 
-
 Не е секта:
 
 Традиции и стигма: 
@@ -30,3 +29,15 @@ we are here to worship god as best as we can according to the people who were cl
 
 „Секта“?
 Евангелизмът не е секта, а християнско движение, което обединява вярващи от различни култури и нации. Неговата цел е да изгради силна връзка с Бога, а не да разделя хората.
+
+what it is:
+
+It is a christian movement
+It focuses on God and what he has done for us.
+It is trying to worhip according to the earliest christian accounts recorded in the gospels and the new testament teachings -- faith alone
+Belives the bible is insipired by god
+Belives that there is nothing mysstical and all has been revieled. That a person can read and understand the bible directly.
+
+Does that mean that one does not need to go to church according to evangelism? No 
+
+The Holy Scriptures are said to possess infallible truth and divine authority, containing "all things necessary for [God's] own glory, man's salvation, faith, and life",
