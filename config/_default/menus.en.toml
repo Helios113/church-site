@@ -20,7 +20,7 @@ weight = 3
 [[main]]
 # parent = "About"
 name = "What is Evangelicalism?"
-url = "/evangelicalism"
+url = "/evangelism"
 weight = 1  
 
 [[main]]

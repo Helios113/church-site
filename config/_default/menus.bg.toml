@@ -9,24 +9,32 @@
 [[main]]
 name = "За нас"
 url = "/about"
-weight = 2
-
-[[main]]
-name = "История"
-url = "/history"
 weight = 3
 
 [[main]]
+parent = "За нас"
+name = "История"
+url = "/history"
+weight = 4
+
+[[main]]
 name = "Какво е Евангелство?"
-url = "/evangelicalism"
+url = "/evangelism"
 weight = 1
 
 [[main]]
+name = "Как да дойда на църква?"
+url = "/how-to"
+weight = 2
+
+[[main]]
+parent = "За нас"
 name = "Убеждения"
 url = "/beliefs"
 weight = 5
 
 [[main]]
+parent = "За нас"
 name = "Контакти"
 url = "/contact"
 weight = 6

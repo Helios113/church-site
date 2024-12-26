@@ -47,13 +47,13 @@ features:
   - title: "Evangelical Congregational Church"
     backgroundImage: "/images/hero.jpg"
     subtitle: 'in the heart of [Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
-    content: 'An evangelical church where everyone is welcome.'
+    content: 'An evangelical church where everyone is welcome. We meet at [Dobruja St. 47, Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     # We meet at [47 Dobruja St., Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     bulletpoints:
     button:
       enable: true
       label: "What is Evangelicalism?"
-      link: "#"
+      link: "/en/evangelism"
   - title: "We would love to meet you!"
     content: "The church is open **daily** for prayer, council or shelter. We also host **weekly** prayer meetings and worship services. Our gatherings are a great place to explore the Christian faith and meet fellow believers."
     bulletpoints:

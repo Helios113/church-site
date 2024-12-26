@@ -47,13 +47,13 @@ socials:
 features:
   - title: "Евангелска Съборна Църква"
     subtitle: 'в сърцето на [Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
-    content: 'Ние сме евагелска църква която приема всички срещаме на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    content: 'Ние сме евагелска църква която приема всички. Срещаме се на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     backgroundImage: "/images/hero.jpg"
     bulletpoints:
     button:
       enable: true
       label: "Какво е Евангелство?"
-      link: "#"
+      link: "/bg/evangelism"
     # table:
     #   title: "Богослужения"
     #   content: "Нашите събирания са чудесно място да проучиш християнската вяра и да се запознаеш със събратя по вяра."
@@ -62,18 +62,25 @@ features:
     #     columns: ["Вторник","Молитвено събрание", "18ч"],
     #     columns: ["Неделя","Литургия с проповед", "10ч"]
     # ]
-  - title: "Ще се радваме да се запознаем с вас!"
+  - title: "Ще се радваме да се запознаем с теб!"
     image: "/images/service-2.png"
-    content: "Църквата е отворена **ежедневно** за молитва, съвет или подслон. Също така организираме **седмични** молитвени събрания и богослужения."
-    # bulletpoints:
-    #   - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-    #   - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-    #   - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+    content: "Църквата е отворена **ежедневно** за молитва, съвет или подслон. Също така организираме **седмични** молитвени събрания и богослужения. Нашите събирания са чудесно място за изследване на християнската вяра и среща с други вярващи."
     button:
       enable: false
       label: "Get Started Now"
       link: "https://github.com/zeon-studio/hugoplate"
-      
+    table:
+      title: ""
+      content: ""
+      header: 
+        enable: false
+        values: ["", ""]
+      rows: [
+        columns: ["Ежедневно работно време: ","09:00 - 17:00"],
+        columns: ["Молитвено събрание: ","вторник в 18:00"],
+        columns: ["Литургия с проповед: ","неделя в 10:00"],
+      ]
+
 ---
 
 
