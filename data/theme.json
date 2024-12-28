@@ -34,7 +34,8 @@
       "primary": "sans-serif:wght@400;600",
       "primary_type": "sans-serif",
       "secondary": "sans-serif:wght@500;700",
-      "secondary_type": "sans-serif"
+      "secondary_type": "sans-serif",
+      "emoji": "Noto Color Emoji"
     },
     "font_size": {
       "base": "16",

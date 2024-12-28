@@ -17,12 +17,23 @@
 <!-- google fonts -->
 {{ $pf:= site.Data.theme.fonts.font_family.primary }}
 {{ $sf:= site.Data.theme.fonts.font_family.secondary }}
+{{ $ef:= site.Data.theme.fonts.font_family.emoji }}
+
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <script>
   (function () {
     const googleFont = document.createElement("link");
     googleFont.href = "https://fonts.googleapis.com/css2?family={{$pf | safeURL}}{{with $sf}}&family={{. | safeURL}}{{end}}&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family={{$ef | safeURL}}&display=swap";
     googleFont.type = "text/css";
     googleFont.rel = "stylesheet";
     document.head.appendChild(googleFont);

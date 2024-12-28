@@ -6,27 +6,19 @@ meta_title: "evangelism"
 description: "this is meta description"
 image: "/images/avatar.png"
 draft: false
-blocks:
-  - title: "Евангелството е"
-    emoji: "✝️"
-    content: "христянска вара"
-    bulletpoints:
-      - "Ние вярваме в Исус"
-      - "Не сме секта"
-    icon: "/images/idea-svgrepo-com.png"
-  - title: "Евангелството е"
-    emoji: "❌"
-    content: "христянска вара"
-    icon: ""
-  - title: "Знаеш ли, че 🤓"
-    emoji: "🤓"
-    content: "христянска вара"
-    icon: ""
+steps:
   - title: "Евангелството е"
     content: "христянска вара"
-    icon: ""
+    image: "/images/front.jpeg"
+    number: "1"
   - title: "Евангелството е"
     content: "христянска вара"
-    icon: ""
-      
+    image: "/images/door.jpeg"
+    number: "2"
+  - title: "Евангелството е"
+    content: "христянска вара"
+    image: "/images/church.jpg"
+    number: "3"
+    last: true
+
 ---
