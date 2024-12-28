@@ -1,16 +1,13 @@
-@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
-@import "../../node_modules/susy/sass/susy";
+@import "breakpoint";
+@import "susy";
 
 @mixin breakpoint($point) {
-  @if $point == big {
-    @media screen and (min-width: 601px) {
-      @content;
-    }
-  } @else if $point == small {
-    @media screen and (max-width: 600px) {
-      @content;
-    }
-  }
+	@if $point == big {
+		@media screen and (min-width: 601px){@content;}
+	}	
+	@else if $point == small {
+		@media screen and (max-width: 600px){@content;}
+	}
 }
 
 $connectorHeight: 42px;
@@ -24,25 +21,25 @@ $circleSizeLarge: 174px;
 $circlePaddingLarge: 48px;
 
 *, *:before, *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
 }
 
 body {
-  font-size: inherit;
-  line-height: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
-.container-info {
-  box-sizing: content-box;
-  padding: 0 12px;
-  max-width: 640px;
-  margin: 48px auto;
+.container {
+    box-sizing: content-box;
+    padding: 0 12px;
+    max-width: 640px;
+    margin: 48px auto;
 }
 
 .step-list {
