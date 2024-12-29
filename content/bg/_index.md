@@ -46,7 +46,7 @@ socials:
       link: https://www.youtube.com/@ecchaskovo
 features:
   - title: "Евангелска Съборна Църква"
-    subtitle: 'в сърцето на [Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
+    subtitle: 'в сърцето на Хасково'
     content: 'Ние сме евагелска църква която приема всички. Срещаме се на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     backgroundImage: "/images/hero.jpg"
     bulletpoints:

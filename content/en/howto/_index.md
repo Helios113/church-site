@@ -1,6 +1,6 @@
 ---
 
-title: "Как да дойда на църква?"
+title: "How to go to a service?"
 emoji: "🤔"
 meta_title: "evangelism"
 description: "this is meta description"

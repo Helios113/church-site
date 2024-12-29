@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+  <div class="container-info">
+      <div class="inline-titles">
+        <h2 class="h2 mb-6 emoji">{{ .Params.Emoji }}</h2>
+        <h2 class="h2 mb-6">{{ .Title }}</h2>
+      </div>
+    <ol class="step-list">
+      {{ range .Params.Blocks}}
+        <li class="step-list__item">
+            <div class="step-list__item__inner">
+                <div class="content">
+                    <div class="body">
+                        <h3 class="h3 mb-6">{{ .title | markdownify}}</h3>
+                        <p>{{ .content }}</p>
+                        {{ if .bulletpoints}}
+                            <ul>
+                                {{ range .bulletpoints }}
+                                <li style="font-size: 1.3em;">{{ . }}</li>
+                                {{ end }}
+                            </ul>
+                        {{ end }}
+                    </div>
+                        {{if .emoji}}
+                            <h2 class="emoji" style="font-size: 8em;">{{ .emoji }}</h2>
+                        {{end}}  
+                </div>    
+            </div>
+        </li>
+        {{ end }}
+    </ol>
+</div>
+{{ end }}

@@ -1,39 +1,38 @@
 {{ define "main" }}
 
-  <div class="container-info">
-      <div class="inline-titles">
+  <div class="container">
+      <div class="inline">
         <h2 class="h2 mb-6 emoji">{{ .Params.Emoji }}</h2>
-        <h2 class="h3 mb-6">{{ .Title }}</h2>
+        <h2 class="h2 mb-6">{{ .Title }}</h2>
       </div>
-    <ol class="step-list">
-      {{ range .Params.Blocks}}
-        <li class="step-list__item">
-            <div class="step-list__item__inner">
-                <div class="content">
-                    <div class="body">
-                        {{/*  <div class="inline-titles">  */}}
-                        {{/*  <h2 class="emoji">{{ .emoji }}</h2>  */}}
-                        <h2>{{ .title }}</h2>
-                        {{/*  </div>  */}}
-                        <p>{{ .content }}</p>
-                        {{ if .bulletpoints}}
+      <ul>
+      {{ range $i, $e:= .Params.Blocks}}
+        <li style="">
+                <div class="info-block" >
+                    {{if not (modBool $i 2)}}
+                    {{if $e.emoji}}
+                        <h2 class="emoji" style="font-size: 8em;">{{ .emoji }}</h2>
+                    {{end}}  
+                    {{end}}
+                    <div style="flex-direction: column; display: flex; ">   
+                    <h3 class="h3 mb-6">{{ $e.title | markdownify}}</h3>
+                    <p>{{ $e.content }}</p>
+                    {{ if $e.bulletpoints}}
                         <ul>
-                            {{ range .bulletpoints }}
-                            <li>{{ . }}</li>
+                            {{ range $e.bulletpoints }}
+                            <li style="font-size: 1.3em;">{{ . }}</li>
                             {{ end }}
                         </ul>
-                        {{ end }}
+                    {{ end }}
                     </div>
-                    {{if .emoji}}
-                    <h2 class="emoji" style="font-size: 10em;">{{ .emoji }}</h2>
-                    {{/*  <div class="icon">
-                        <img src="{{ .icon | absURL }}" alt="Check" />
-                    </div>            */}}
-                    {{end}}      
-                </div>
-            </div>
+                    {{if (modBool $i 2)}}
+                    {{if $e.emoji}}
+                        <h2 class="emoji" style="font-size: 8em;">{{ .emoji }}</h2>
+                    {{end}}  
+                    {{end}}
+                </div>    
         </li>
         {{ end }}
-    </ol>
+    </ul>
 </div>
 {{ end }}
