@@ -2,6 +2,20 @@ $primary-color: #4CAF50;
 $secondary-color: #f4f4f4;
 $text-color: #333;
 $arrow-size: 30px;
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "../../node_modules/susy/sass/susy";
+
+@mixin breakpoint($point) {
+  @if $point == big {
+    @media screen and (min-width: 1001px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media screen and (max-width: 1000px) {
+      @content;
+    }
+  }
+}
 
 .info-block {
     width: 70%;
@@ -25,6 +39,7 @@ $arrow-size: 30px;
     font-size: 3em;
     font-family: 'Noto Color Emoji';
 }
+
 .container-steps {
   display: flex;
 //   based on width we can change the flex direction
@@ -36,7 +51,6 @@ $arrow-size: 30px;
 
   
    
-  
       .title {
         font-size: 24px;
         color: $primary-color;
@@ -78,13 +92,11 @@ $arrow-size: 30px;
           }
         }
   
-        .arrow {
-          font-size: $arrow-size;
-          color: $primary-color;
-          margin-top: 10px;
-        }
+       
       }
     }
+  
+
   
 .steps-tutorial {
     width: 70%;
@@ -95,6 +107,9 @@ $arrow-size: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
+@include breakpoint(big) {
+
 .container-strip {
   display: flex;
   flex-direction: row;
@@ -103,3 +118,53 @@ $arrow-size: 30px;
   width: 100%;
   padding: 20px;
 }
+.arrow {
+  display: inline-block;
+  height: 150px;
+  background: #000;
+  width: 75px;
+  transform: rotate(-90deg);
+
+
+}
+.arrow:before {
+  content: "";
+  border-top: 100px solid transparent;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 100px solid #000;
+  transform: rotateZ(180deg) translateY(-50%) translateX(31%);
+  position: relative;
+  display: inline-block;
+}
+}
+@include breakpoint(small) {
+
+  .container-strip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+  .arrow {
+    display: inline-block;
+    height: 150px;
+    background: #000;
+    width: 75px;
+
+  }
+  .arrow:before {
+    content: "";
+    border-top: 100px solid transparent;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid #000;
+    transform: rotateZ(180deg) translateY(-50%) translateX(31%);
+    position: relative;
+    display: inline-block;
+  }
+  }
+
+

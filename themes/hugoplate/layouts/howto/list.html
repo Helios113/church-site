@@ -1,27 +1,22 @@
 {{ define "main" }}
 <div class="container-steps">
-      <h1 class="title">{{ .Title }}</h1>
-      <div class="container-strip">
-      {{ range .Params.Steps }}
-        <div class="steps-tutorial">
-            <div class="step">
-            <div class="step-content">
-                <img src="{{ .image | absURL }}" alt="Step {{ .number }}" class="step-image">
-                <p class="step-text">Step {{ .number }}: {{ .content }}</p>
-            </div>
-            </div>
-        </div>
-         {{ if not .last}}
-         <div class="arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <polyline points="12 12 12 19 5 12"></polyline>
-            </svg>
+  <h1 class="title">{{ .Title }}</h1>
+  <div class="container-strip">
+    {{ range .Params.Steps }}
+      <div class="steps-tutorial">
+        <div class="step">
+          <div class="step-content">
+            <img src="{{ .image | absURL }}" alt="Step {{ .number }}" class="step-image">
+            <p class="step-text">Step {{ .number }}: {{ .content }}</p>
           </div>
-          {{ end }}
-      {{ end }}
+        </div>
+        {{ if not .last }}
+          <div class="arrow">
+            <!-- Add arrow icon or image here if needed -->
+          </div>
+        {{ end }}
       </div>
-
+    {{ end }}
   </div>
-
+</div>
 {{ end }}

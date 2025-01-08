@@ -1,10 +1,10 @@
 {{ define "main" }}
 
   <div class="container">
-      <div class="inline">
-        <h2 class="h2 mb-6 emoji">{{ .Params.Emoji }}</h2>
+      {{/*  <div class="inline">  */}}
+        {{/*  <h2 class="h2 mb-6 emoji">{{ .Params.Emoji }}</h2>  */}}
         <h2 class="h2 mb-6">{{ .Title }}</h2>
-      </div>
+      {{/*  </div>  */}}
       <ul>
       {{ range $i, $e:= .Params.Blocks}}
         <li style="">

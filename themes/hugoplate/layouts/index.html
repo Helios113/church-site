@@ -352,26 +352,24 @@
   <!-- /Testimonials -->
   {{ with .Params.socials}}
   <!-- Socials Panel -->
-  <section class="section-sm bg-slate-100" >
+  <section class="section-sm bg-slate-100">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <h2 class="mb-4 text-center">{{ .title }}</h2>
-          <div class="social-icons text-center">
-            {{ range .items }}
-              <a
-                target="_blank"
-                aria-label="{{ .name }}"
-                rel="nofollow noopener"
-                href="{{ .link | safeURL }}">
-                <i class="{{ .icon }} fa-2x"></i>
-              </a>
-            {{ end }}
+          <div class="social-icons text-center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/eschaskovo?igsh=MWxzb3d5ZHQ5ZWg3eg==" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width: 300px; height: 400px;">
+            </blockquote>
+            <div class="fb-page" data-href="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" style="width: 300px; height: 400px;">
+              <blockquote cite="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr">Евангелска съборна църква - Хасково</a></blockquote></div>
+            <iframe width="300" height="400" src="https://www.youtube.com/embed/X3LnCQ9fsPE?si=oYlt4U7FLwQwHNSS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  
   <!-- /Socials Panel -->
   {{ end }}
 
@@ -425,6 +423,9 @@
     </div>  
   </section>  
   <!-- /Recent Posts Panel -->  */}}
+  {{/*  https://www.instagram.com/eschaskovo?igsh=MWxzb3d5ZHQ5ZWg3eg==  */}}
+
+<script async src="//www.instagram.com/embed.js"></script>
 
 {{ end }}
 
