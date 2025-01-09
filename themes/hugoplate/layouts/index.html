@@ -212,7 +212,7 @@
 
   {{ range $i, $e:= .Params.features1 }}
   {{ if .backgroundImage }}
-    <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }});">
+    <section rel="preload" fetchpriority="high" class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }});">
       <div class="blurred">
       {{ else }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
