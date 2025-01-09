@@ -45,7 +45,7 @@ socials:
       link: https://www.youtube.com/@ecchaskovo
 features:
   - title: "Evangelical Congregational Church"
-    backgroundImage: "/images/hero.jpg"
+    backgroundImage: "/images/hero.webp"
     subtitle: 'in the heart of Haskovo'
     content: 'An evangelical church where everyone is welcome. We meet at [Dobruja St. 47, Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
     # We meet at [47 Dobruja St., Haskovo](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
