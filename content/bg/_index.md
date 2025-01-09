@@ -48,7 +48,7 @@ features:
   - title: "Евангелска Съборна Църква"
     subtitle: 'в сърцето на Хасково'
     content: 'Евангелска църква, където **всеки е добре дошъл**. Срещаме се на [ул."Добруджа" 47, гр. Хасково](https://maps.app.goo.gl/pHphApJnuSjVdv3p8)'
-    backgroundImage: "/images/hero.jpg"
+    backgroundImage: "/images/hero.webp"
     bulletpoints:
     button:
       enable: true
