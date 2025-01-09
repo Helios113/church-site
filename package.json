@@ -37,5 +37,8 @@
       "tailwindcss": {},
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "lite-youtube-embed": "^0.3.3"
   }
 }
