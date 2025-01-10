@@ -29,6 +29,7 @@ dates:
 
 map:
   title: "Карта"
+  mapFacade: "/images/map.webp"
 # Features
 socials:
   title: "Социални мрежи"
