@@ -5,8 +5,8 @@ min = "0.139.2"
 # [[imports]]
 # path = "github.com/zeon-studio/hugoplate"
 
-[[imports]]
-path = "github.com/gethugothemes/hugo-modules/search"
+# [[imports]]
+# path = "github.com/gethugothemes/hugo-modules/search"
 
 [[imports]]
 path = "github.com/gethugothemes/hugo-modules/pwa"
@@ -14,11 +14,11 @@ path = "github.com/gethugothemes/hugo-modules/pwa"
 [[imports]]
 path = "github.com/gethugothemes/hugo-modules/images"
 
-[[imports]]
-path = "github.com/gethugothemes/hugo-modules/videos"
+# [[imports]]
+# path = "github.com/gethugothemes/hugo-modules/videos"
 
-[[imports]]
-path = "github.com/gethugothemes/hugo-modules/icons/font-awesome"
+# [[imports]]
+# path = "github.com/gethugothemes/hugo-modules/icons/font-awesome"
 
 # [[imports]]
 # path = "github.com/gethugothemes/hugo-modules/icons/themify-icons"

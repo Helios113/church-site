@@ -1,6 +1,6 @@
 <!-- DNS preconnect -->
 <meta http-equiv="x-dns-prefetch-control" content="on" />
-<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+{{/*  <link rel="preconnect" href="https://use.fontawesome.com" crossorigin />  */}}
 <link rel="preconnect" href="//cdnjs.cloudflare.com" />
 <link rel="preconnect" href="//www.googletagmanager.com" />
 <link rel="preconnect" href="//www.google-analytics.com" />
@@ -23,7 +23,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<script>
+{{/*  <script>
   (function () {
     const googleFont = document.createElement("link");
     googleFont.href = "https://fonts.googleapis.com/css2?family={{$pf | safeURL}}{{with $sf}}&family={{. | safeURL}}{{end}}&display=swap";
@@ -38,7 +38,7 @@
     googleFont.rel = "stylesheet";
     document.head.appendChild(googleFont);
   })();
-</script>
+</script>  */}}
 
 <!-- plugins + stylesheet -->
 {{ $styles := slice }}
@@ -65,15 +65,15 @@
 {{ $styles = $styles | resources.Concat "css/style.css" }}
 {{ $styles = $styles | css.PostCSS }}
 
-{{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}
-{{ $stylesLazy = $stylesLazy | css.PostCSS }}
+{{/*  {{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}  */}}
+{{/*  {{ $stylesLazy = $stylesLazy | css.PostCSS }}  */}}
 
 {{ if hugo.IsProduction }}
   {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
   {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint | resources.PostProcess }}
 {{ else }}
   {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . }}
-  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . }}
+  {{/*  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . }}  */}}
 {{ end }}
 
 {{/* styles */}}
@@ -83,11 +83,11 @@
   rel="stylesheet" />
 
 {{/* styles lazy */}}
-<link
+{{/*  <link
   defer
   async
   rel="stylesheet"
   href="{{ $stylesLazy.RelPermalink }}"
   integrity="{{ $stylesLazy.Data.Integrity }}"
   media="print"
-  onload="this.media='all'; this.onload=null;" />
+  onload="this.media='all'; this.onload=null;" />  */}}

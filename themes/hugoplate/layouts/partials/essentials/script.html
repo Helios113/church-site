@@ -8,10 +8,13 @@
       type="application/javascript"
       {{ .attributes | safeHTMLAttr }}></script>
   {{ else }}
-    {{ if not .lazy }}
-      {{ $scripts = $scripts | append (resources.Get .link) }}
-    {{ else }}
-      {{ $scriptsLazy = $scriptsLazy | append (resources.Get .link) }}
+    {{ $resource := resources.Get .link }}
+    {{ if $resource }}
+      {{ if not .lazy }}
+        {{ $scripts = $scripts | append $resource }}
+      {{ else }}
+        {{ $scriptsLazy = $scriptsLazy | append $resource }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
@@ -24,40 +27,38 @@
 
 
 
-{{/*  <script>
-  console.log("HugoPlate: main script loaded");
-  console.log({{ resources.Get "js/bgt.js" }})
-  console.log({{$scripts}})
-</script>  */}}
-{{ $scripts = $scripts | resources.Concat "js/script.js" }}
-
-{{ $scriptsLazy = $scriptsLazy | resources.Concat "js/script-lazy.js" }}
-
-
-
-{{ if hugo.IsProduction }}
-  {{ $scripts = $scripts | minify | fingerprint }}
-  {{ $scriptsLazy = $scriptsLazy | minify | fingerprint }}
+{{ if gt (len $scripts) 0 }}
+  {{ $scripts = $scripts | resources.Concat "js/script.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $scripts = $scripts | minify | fingerprint }}
+  {{ end }}
+  <script
+    crossorigin="anonymous"
+    integrity="{{ $scripts.Data.Integrity }}"
+    src="{{ $scripts.RelPermalink }}">
+  </script>
 {{ end }}
 
-{{/* scripts */}}
-<script
-  crossorigin="anonymous"
-  integrity="{{ $scripts.Data.Integrity }}"
-  src="{{ $scripts.RelPermalink }}">  
-</script>
+{{ if gt (len $scriptsLazy) 0 }}
+  {{ $scriptsLazy = $scriptsLazy | resources.Concat "js/script-lazy.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $scriptsLazy = $scriptsLazy | minify | fingerprint }}
+  {{ end }}
+  <script
+    defer
+    async
+    crossorigin="anonymous"
+    integrity="{{ $scriptsLazy.Data.Integrity }}"
+    src="{{ $scriptsLazy.RelPermalink }}">
+  </script>
+{{ end }}
+
+
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v21.0"></script>
 <script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/youtube.xml&up_channel=ecchaskovo&synd=open&w=320&h=390&title=&border=%23ffffff%7C3px%2C1px+solid+%23999999&output=js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
-{{/* scripts lazy */}}
-<script
-  defer
-  async
-  crossorigin="anonymous"
-  integrity="{{ $scriptsLazy.Data.Integrity }}"
-  src="{{ $scriptsLazy.RelPermalink }}"></script>
 
 
 
