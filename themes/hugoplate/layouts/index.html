@@ -20,7 +20,7 @@
       const daysMap = {
         "Monday": 1,
         "Tuesday": 2,
-        "wednesday":3,
+        "Wednesday":3,
         "Thursday": 4,
         "Friday": 5,
         "Saturday": 6,
@@ -94,9 +94,15 @@
   <!-- /Banner -->
 
   {{ with .Params.hero }}
-    {{/*  make hero with background image and optional additional image  */}}
-    {{/*  make the section have a background iamge style which takes the background image variable  */}}
-    <section class="section bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: {{ .backgroundImage | absURL }};">
+    <section class="section bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('{{ .backgroundImage | absURL }}'); background-size: cover;">
+      <style>
+        @media (max-width: 768px) {
+          .section {
+            background-image: linear-gradient(to bottom, #87CEEB, #f0f8ff);
+            background-size: cover;
+          }
+        }
+      </style>
       <div class="container">
         <div class="row items-center justify-between">
           <div class="md:col-6 mb-6">
@@ -122,16 +128,25 @@
           </div>
         </div>
       </div>
+    </section>
   {{ end }}
 
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
-  {{ if .backgroundImage }}
-    <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed justify-items-center" style="background-image: url({{ .backgroundImage | absURL }});">
-      <div class="blurred">
-      {{ else }}
-    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
-  {{ end }}
+    {{ if .backgroundImage }}
+      <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed justify-items-center" style="background-image: url({{ .backgroundImage | absURL }});">
+        <style>
+          @media (max-width: 768px) {
+            .section-sm {
+              background-image: linear-gradient(to bottom, #87CEEB, #f0f8ff);
+              background-size: cover;
+            }
+          }
+        </style>
+        <div class="blurred">
+    {{ else }}
+      <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+    {{ end }}
       <div class="container justify-center">
         <div class="row items-center justify-between">
           <div class="row items-center justify-center">
