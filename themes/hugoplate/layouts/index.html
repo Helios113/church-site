@@ -389,7 +389,7 @@
       <div class="row">
         <div class="col-12">
           <h2 class="mb-4 text-center">{{ .title }}</h2>
-          {{/*  <div class="map-container" style="position: relative; overflow: hidden; padding-top: 56.25%;">
+          <div class="map-container" style="position: relative; overflow: hidden; padding-top: 56.25%;">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23743.164459614072!2d25.5132847!3d41.9380956!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ad50c13e2d8421%3A0x684a2c8e9fc28fe5!2z0JXQstCw0L3Qs9C10LvRgdC60LAg0KHRitCx0L7RgNC90LAg0KbRitGA0LrQstCwIC0g0KXQsNGB0LrQvtCy0L4!5e0!3m2!1sen!2sbg!4v1734999285883!5m2!1sen!2sbg&zoom=9"
               width="600"
@@ -398,18 +398,18 @@
               allowfullscreen=""
               loading="lazy">
             </iframe>
-            </div>  */}}
-            <div class="map-container" id="mapContainer" >
+            </div>
+            {{/*  <div class="map-container" id="mapContainer" >
               <!-- Facade Image -->
               <div class="map-facade" id="mapFacade">
                   <img src="{{ .mapFacade | absURL }}" alt="Map Preview">
-              </div>
+              </div>  */}}
           </div>
         </div>
       </div>
     </div>
   </section>
-  <script>
+  {{/*  <script>
     document.getElementById('mapFacade').addEventListener('click', function () {
         // Replace the facade image with the iframe
         const mapContainer = document.getElementById('mapContainer');
@@ -433,7 +433,7 @@
         mapContainer.innerHTML = '';
         mapContainer.appendChild(iframe);
     });
-  </script>
+  </script>  */}}
   <!-- /Maps Panel -->
   {{ end }}
 
