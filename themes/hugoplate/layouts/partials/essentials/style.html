@@ -66,6 +66,9 @@
 {{/*  {{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}  */}}
 {{/*  {{ $stylesLazy = $stylesLazy | css.PostCSS }}  */}}
 
+{{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
+{{/*  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint | resources.PostProcess }}  */}}
+
 {{/*  {{ if hugo.IsProduction }}
   {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
   {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint | resources.PostProcess }}
