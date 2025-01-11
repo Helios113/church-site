@@ -66,13 +66,13 @@
 {{/*  {{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}  */}}
 {{/*  {{ $stylesLazy = $stylesLazy | css.PostCSS }}  */}}
 
-{{ if hugo.IsProduction }}
+{{/*  {{ if hugo.IsProduction }}
   {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
   {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint | resources.PostProcess }}
 {{ else }}
-  {{/*  {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . }}  */}}
-  {{/*  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . }}  */}}
-{{ end }}
+  {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
+  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint | resources.PostProcess }}
+{{ end }}  */}}
 
 {{/* styles */}}
 <link
