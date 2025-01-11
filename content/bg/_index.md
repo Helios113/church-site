@@ -53,7 +53,7 @@ features:
     bulletpoints:
     button:
       enable: true
-      label: "Какво е Евангелство?"
+      label: "Какво е Евангелизъм?"
       link: "/bg/evangelism"
     # table:
     #   title: "Богослужения"
