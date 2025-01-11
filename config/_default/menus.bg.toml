@@ -18,7 +18,7 @@ url = "/history"
 weight = 4
 
 [[main]]
-name = "Какво е Евангелство?"
+name = "Какво е Евангелизъм?"
 url = "/evangelism"
 weight = 1
 
