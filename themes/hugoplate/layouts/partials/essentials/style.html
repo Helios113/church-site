@@ -11,8 +11,6 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com" />
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//connect.facebook.net" />
-<link rel="dns-prefetch" href="//platform.linkedin.com" />
-<link rel="dns-prefetch" href="//platform.twitter.com" />
 
 <!-- google fonts -->
 {{ $pf:= site.Data.theme.fonts.font_family.primary }}
@@ -72,7 +70,7 @@
   {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
   {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint | resources.PostProcess }}
 {{ else }}
-  {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . }}
+  {{/*  {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . }}  */}}
   {{/*  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . }}  */}}
 {{ end }}
 
@@ -82,7 +80,7 @@
   integrity="{{ $styles.Data.Integrity }}"
   rel="stylesheet" />
 
-  
+
 {{/* styles lazy */}}
 {{/*  <link
   defer
