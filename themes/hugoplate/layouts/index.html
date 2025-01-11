@@ -134,15 +134,7 @@
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
     {{ if .backgroundImage }}
-      <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed justify-items-center" style="background-image: url({{ .backgroundImage | absURL }});">
-        <style>
-          @media (max-width: 768px) {
-            .section-sm {
-              background-image: linear-gradient(to bottom, #87CEEB, #f0f8ff);
-              background-size: cover;
-            }
-          }
-        </style>
+      <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed justify-items-center feature-section" style="background-image: url({{ .backgroundImage | absURL }});">
         <div class="blurred">
     {{ else }}
       <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
@@ -474,6 +466,15 @@
   </section>  
   <!-- /Recent Posts Panel -->  */}}
   {{/*  https://www.instagram.com/eschaskovo?igsh=MWxzb3d5ZHQ5ZWg3eg==  */}}
+
+<style>
+  @media (max-width: 768px) {
+    .feature-section {
+      background-image: linear-gradient(to bottom, #87CEEB, #f0f8ff) !important;
+      background-size: cover !important;
+    }
+  }
+</style>
 
 <script async src="//www.instagram.com/embed.js"></script>
 
