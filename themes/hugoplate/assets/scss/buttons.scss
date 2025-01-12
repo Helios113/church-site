@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-block rounded border border-transparent px-5 py-2 font-semibold transition;
+  @apply inline-block rounded border border-transparent px-5 py-2 font-semibold capitalize transition;
 }
 
 .btn-sm {
@@ -12,7 +12,7 @@
     background-color: #c93f15;
     color: #fff;
   }
-  @apply text-white dark:bg-orange-900 font-primary leading-relaxed dark:text-darkmode-text
+  @apply border-primary bg-primary dark:border-darkmode-primary dark:text-dark text-white dark:bg-darkmode-primary;
 }
 
 .btn-outline-primary {
