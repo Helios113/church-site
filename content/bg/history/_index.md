@@ -1,7 +1,7 @@
 ---
 title: "История"
 meta_title: "History"
-description: "this is meta description"
+description: "История на Евангелска Съборна Църква - гр. Хасково и видни личности, свързани с нея"
 image: "/images/avatar.png"
 draft: false
 ---

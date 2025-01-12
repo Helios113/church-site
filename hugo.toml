@@ -98,6 +98,8 @@ maxAge = "720h"
 dir = ":resourceDir/_gen"
 maxAge = "720h"
 
+[donate]
+link = "/give"
 
 ############################ Markup ##############################
 [markup]

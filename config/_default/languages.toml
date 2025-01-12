@@ -6,8 +6,9 @@ languageCode = "en-gb"
 contentDir = "content/en"
 weight = 2
 donate = "Give"
+link = "/en/give"
 
-################ English language ##################
+################ Bulgarian language ##################
 [bg]
 title = "Християнска църква"
 languageName = "🇧🇬"
@@ -15,3 +16,4 @@ languageCode = "bg"
 contentDir = "content/bg"
 weight = 1
 donate = "Дари"
+link = "/give"

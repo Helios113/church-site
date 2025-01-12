@@ -1,10 +1,10 @@
 {{ $context := .Context }}
 {{ $class := .Class }}
 {{ $pageLang := $context.Lang }}
-
+{{/*  {{site.Params}}  */}}
 <a
   class="btn btn-primary {{ $class }}"
-  href="{{ site.Params.donate.link | default "https://www.example.com/donate" }}"
+  href="{{ relLangURL site.Params.donate.link }}"
   target="_blank"
   rel="noopener">
   {{ if eq $pageLang "bg" }}
