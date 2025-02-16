@@ -36,7 +36,7 @@
 
     <!-- header (don't cache it) -->
     {{ partial "essentials/header.html" . }}
-    {{/*  {{ partial "search-modal.html" (dict "Context" . ) }}  */}}
+    {{ partial "search-modal.html" (dict "Context" . ) }}
 
 
     <main>
@@ -50,6 +50,5 @@
     <!-- script (always cache it) -->
     {{ partialCached "essentials/script.html" . }}
     {{ partial "components/bible-links.html" (dict "Context" . "Class" "mr-5 pl-2 py-1 dark:bg-darkmode-theme-light rounded") }}
-
   </body>
 </html>

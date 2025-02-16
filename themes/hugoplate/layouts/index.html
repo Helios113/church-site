@@ -1,62 +1,61 @@
 {{ define "main" }}
+{{ with .Params.dates }}
+<!-- Service Date Banner -->
+<div class="service-banner">
+  <p id="next-service-date">Loading next service date...</p>
+</div>
 
-  {{ with .Params.dates }}
-  <!-- Service Date Banner -->
-  <div class="service-banner">
-    <p id="next-service-date">Loading next service date...</p>
-  </div>
+<!-- Include the JavaScript -->
 
-  <!-- Include the JavaScript -->
+<script>
+  const services = [
+    {{ range .services }}
+    { day: "{{ .day }}", time: "{{ .time }}" },
+    {{ end }}
+  ];
 
-  <script>
-    const services = [
-      {{ range .services }}
-      { day: "{{ .day }}", time: "{{ .time }}" },
-      {{ end }}
-    ];
+  function getNextServiceDate(services) {
+    const now = new Date();
+    const daysMap = {
+      "Monday": 1,
+      "Tuesday": 2,
+      "Wednesday":3,
+      "Thursday": 4,
+      "Friday": 5,
+      "Saturday": 6,
+      "Sunday": 0,
+    };
 
-    function getNextServiceDate(services) {
-      const now = new Date();
-      const daysMap = {
-        "Monday": 1,
-        "Tuesday": 2,
-        "Wednesday":3,
-        "Thursday": 4,
-        "Friday": 5,
-        "Saturday": 6,
-        "Sunday": 0,
-      };
+    let nextService = null;
 
-      let nextService = null;
-
-      for (const service of services) {
-        const targetDay = daysMap[service.day];
-        const currentDay = now.getDay();
-        console.log(currentDay);
-        const daysUntilNext = (targetDay - currentDay + 7) % 7;
-        
-        const nextDate = new Date(now);
-        nextDate.setDate(now.getDate() + daysUntilNext);
-        const [hours, minutes] = service.time.split(":").map(Number);
-        nextDate.setHours(hours, minutes, 0, 0);
-        console.log(nextDate);
-        if (!nextService || nextDate < nextService) {
-          nextService = nextDate;
-        }
+    for (const service of services) {
+      const targetDay = daysMap[service.day];
+      const currentDay = now.getDay();
+      console.log(currentDay);
+      const daysUntilNext = (targetDay - currentDay + 7) % 7;
+      
+      const nextDate = new Date(now);
+      nextDate.setDate(now.getDate() + daysUntilNext);
+      const [hours, minutes] = service.time.split(":").map(Number);
+      nextDate.setHours(hours, minutes, 0, 0);
+      console.log(nextDate);
+      if (!nextService || nextDate < nextService) {
+        nextService = nextDate;
       }
-
-      return nextService;
     }
 
-    function displayNextServiceDate() {
-      const nextServiceDate = getNextServiceDate(services);
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit',  };
-      document.getElementById("next-service-date").textContent = `{{ .text }}: ${nextServiceDate.toLocaleDateString({{ .date_format }}, options)}`;
-    }
+    return nextService;
+  }
 
-    displayNextServiceDate();
-  </script>
-  {{ end }}
+  function displayNextServiceDate() {
+    const nextServiceDate = getNextServiceDate(services);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit',  };
+    document.getElementById("next-service-date").textContent = `{{ .text }}: ${nextServiceDate.toLocaleDateString({{ .date_format }}, options)}`;
+  }
+
+  displayNextServiceDate();
+</script>
+{{ end }}
 
   <!-- Banner -->
   {{ with .Params.banner }}
@@ -133,90 +132,88 @@
 
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
-    {{ if .backgroundImage }}
-      <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed justify-items-center feature-section" style="background-image: url({{ .backgroundImage | absURL }});">
-        <div class="blurred">
-    {{ else }}
-      <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
-    {{ end }}
-      <div class="container justify-center">
-        <div class="row items-center justify-between">
-          <div class="row items-center justify-center">
-            <div class="lg:col-12 md:col-12 mb-8 justify-center text-center ">
-              <h1 class="mb-4 text-h3 lg:text-h1">
-                {{ .title | markdownify }}
-              </h1>
-              <h3 class="mb-8">
-                {{ .subtitle | markdownify }}
-              </h3>
-              {{/*  Make this narrower  */}}
-              <div class="mb-8 text-center text-2xl" style="width: 75%; margin: 0 auto;">
-                {{ .content | markdownify }}
-              </div>
-            <ul>
-              {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  {{/*  <i class="fa fa-check absolute left-0 top-1.5"></i>  */}}
-                  {{ . | markdownify }}
-                </li>
-              {{ end }}
-            </ul>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-            {{/*  make a table to display a service schedule from a yaml file  */}}
-            {{ with .table }}
-              {{ if .title }}
-              <h3 class="mt-8 mb-4">
-                {{ .title | markdownify }}
-              </h3>
-              {{ end }}
-              {{ if .content }}
-              <p class="mt-8 mb-4 text-left">
-                {{ .content | markdownify }}
-              </p>
-              {{ end }}
-              <table class="table schedule-table" style="width: 75%; margin: 0 auto; margin-top: 2rem;">
-                <col><col>
-                {{ with .header }}
-                {{ if .enable}}
-                <thead>
-                  <tr>
-                    {{ range .values }}
-                      <th>{{ . }}</th>
-                    {{ end }}
-                  </tr>
-                </thead>
-                {{ end }}
-                {{ end }}
-                <tbody>
-                  {{ range .rows }}
-                    <tr>
-                      {{ range .columns }}
-                        <td>{{ . }}</td>
-                      {{ end }}
-                    </tr>
-                  {{ end }}
-                </tbody>
-              </table>
-            {{ end }}
-            
+  {{ if .backgroundImage }}
+  <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed justify-items-center feature-section" style="background-image: url({{ .backgroundImage | absURL }});">
+    <div class="blurred">
+{{ else }}
+  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+{{ end }}
+  <div class="container justify-center">
+    <div class="row items-center justify-between">
+      <div class="row items-center justify-center">
+        <div class="lg:col-12 md:col-12 mb-8 justify-center text-center ">
+          <h1 class="mb-4 text-h3 lg:text-h1">
+            {{ .title | markdownify }}
+          </h1>
+          <h3 class="mb-8">
+            {{ .subtitle | markdownify }}
+          </h3>
+          {{/*  Make this narrower  */}}
+          <div class="mb-8 text-center text-2xl" style="width: 75%; margin: 0 auto;">
+            {{ .content | markdownify }}
           </div>
-        </div>
+        <ul>
+          {{ range .bulletpoints }}
+            <li class="relative mb-4 pl-6">
+              {{/*  <i class="fa fa-check absolute left-0 top-1.5"></i>  */}}
+              {{ . | markdownify }}
+            </li>
+          {{ end }}
+        </ul>
+        {{ with .button }}
+          {{ if .enable }}
+            <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+              {{ .label }}
+              <i class="fa fa-arrow-right pl-2"></i>
+            </a>
+          {{ end }}
+        {{ end }}
+        {{/*  make a table to display a service schedule from a yaml file  */}}
+        {{ with .table }}
+          {{ if .title }}
+          <h3 class="mt-8 mb-4">
+            {{ .title | markdownify }}
+          </h3>
+          {{ end }}
+          {{ if .content }}
+          <p class="mt-8 mb-4 text-left">
+            {{ .content | markdownify }}
+          </p>
+          {{ end }}
+          <table class="table schedule-table" style="width: 75%; margin: 0 auto; margin-top: 2rem;">
+            <col><col>
+            {{ with .header }}
+            {{ if .enable}}
+            <thead>
+              <tr>
+                {{ range .values }}
+                  <th>{{ . }}</th>
+                {{ end }}
+              </tr>
+            </thead>
+            {{ end }}
+            {{ end }}
+            <tbody>
+              {{ range .rows }}
+                <tr>
+                  {{ range .columns }}
+                    <td>{{ . }}</td>
+                  {{ end }}
+                </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        {{ end }}
+        
       </div>
-    </section>
-    {{ if .backgroundImage }}
-      </div>
-      {{ end }}
+    </div>
+  </div>
+</section>
+{{ if .backgroundImage }}
+  </div>
   {{ end }}
-  <!-- /Features -->
-
-
+{{ end }}
+<!-- /Features -->
   {{ range $i, $e:= .Params.features1 }}
   {{ if .backgroundImage }}
     <section rel="preload" fetchpriority="high" class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }});">
@@ -234,7 +231,6 @@
             {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
             {{ end }}
           </div>
-          
           <div
             class="{{ if not (modBool $i 2) }}
               md:order-1
@@ -261,40 +257,41 @@
                 </a>
               {{ end }}
             {{ end }}
-            {{/*  make a table to display a service schedule from a yaml file  */}}
-            {{ with .table }}
-              <h3 class="mt-8 mb-4">
-                {{ .title | markdownify }}
-              </h3>
-              <table class="table mt-6 schedule-table">
-                <thead>
-                  <tr>
-                    {{ range .header }}
-                      <th>{{ . }}</th>
-                    {{ end }}
-                  </tr>
-                </thead>
-                <tbody>
-                  {{ range .rows }}
-                    <tr>
-                      {{ range .columns }}
-                        <td>{{ . }}</td>
+                        {{/*  make a table to display a service schedule from a yaml file  */}}
+                        {{ with .table }}
+                        <h3 class="mt-8 mb-4">
+                          {{ .title | markdownify }}
+                        </h3>
+                        <table class="table mt-6 schedule-table">
+                          <thead>
+                            <tr>
+                              {{ range .header }}
+                                <th>{{ . }}</th>
+                              {{ end }}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{ range .rows }}
+                              <tr>
+                                {{ range .columns }}
+                                  <td>{{ . }}</td>
+                                {{ end }}
+                              </tr>
+                            {{ end }}
+                          </tbody>
+                        </table>
                       {{ end }}
-                    </tr>
-                  {{ end }}
-                </tbody>
-              </table>
-            {{ end }}
-            
+                      
           </div>
         </div>
       </div>
     </section>
     {{ if .backgroundImage }}
-      </div>
-      {{ end }}
+  </div>
+  {{ end }}
   {{ end }}
   <!-- /Features -->
+
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
     {{ if .Params.enable }}
@@ -417,6 +414,4 @@
 </style>
 
 <script async src="//www.instagram.com/embed.js"></script>
-
 {{ end }}
-
