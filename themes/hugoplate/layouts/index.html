@@ -6,7 +6,6 @@
 </div>
 
 <!-- Include the JavaScript -->
-
 <script>
   const services = [
     {{ range .services }}
@@ -19,7 +18,7 @@
     const daysMap = {
       "Monday": 1,
       "Tuesday": 2,
-      "Wednesday":3,
+      "Wednesday": 3,
       "Thursday": 4,
       "Friday": 5,
       "Saturday": 6,
@@ -31,14 +30,13 @@
     for (const service of services) {
       const targetDay = daysMap[service.day];
       const currentDay = now.getDay();
-      console.log(currentDay);
       const daysUntilNext = (targetDay - currentDay + 7) % 7;
       
       const nextDate = new Date(now);
       nextDate.setDate(now.getDate() + daysUntilNext);
       const [hours, minutes] = service.time.split(":").map(Number);
       nextDate.setHours(hours, minutes, 0, 0);
-      console.log(nextDate);
+      
       if (!nextService || nextDate < nextService) {
         nextService = nextDate;
       }
@@ -49,360 +47,143 @@
 
   function displayNextServiceDate() {
     const nextServiceDate = getNextServiceDate(services);
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit',  };
-    document.getElementById("next-service-date").textContent = `{{ .text }}: ${nextServiceDate.toLocaleDateString({{ .date_format }}, options)}`;
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    document.getElementById("next-service-date").textContent = `{{ .text }}: ${nextServiceDate.toLocaleDateString("{{ .date_format }}", options)}`;
   }
 
   displayNextServiceDate();
 </script>
 {{ end }}
 
-  <!-- Banner -->
-  {{ with .Params.banner }}
-    <section class="section pt-14">
-      <div class="container">
-        <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
-              {{ .title | markdownify }}
-            </h1>
-            <p class="mb-8">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-          <div class="col-12">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
-          </div>
-        </div>
-      </div>
-    </section>
-  {{ end }}
-  <!-- /Banner -->
-
-  {{ with .Params.hero }}
-    <section class="section bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('{{ .backgroundImage | absURL }}'); background-size: cover;">
-      <style>
-        @media (max-width: 768px) {
-          .section {
-            background-image: linear-gradient(to bottom, #87CEEB, #f0f8ff);
-            background-size: cover;
-          }
-        }
-      </style>
-      <div class="container">
-        <div class="row items-center justify-between">
-          <div class="md:col-6 mb-6">
-            {{ with .image }}
-              {{ partial "image" (dict "Src" . "Alt" "Hero image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
-            {{ end }}
-          </div>
-          <div class="md:col-5 lg:col-6">
-            <h2 class="mb-4">
-              {{ .title | markdownify }}
-            </h2>
-            <p class="mb-8 text-lg">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </section>
-  {{ end }}
-
-  <!-- Features -->
-  {{ range $i, $e:= .Params.features }}
-  {{ if .backgroundImage }}
-  <section class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed justify-items-center feature-section" style="background-image: url({{ .backgroundImage | absURL }});">
-    <div class="blurred">
-{{ else }}
+<!-- Features -->
+{{ range $i, $e := .Params.features }}
+{{ if .backgroundImage }}
+<section class="section bg-cover bg-center bg-no-repeat bg-fixed video-background" style="height: 100vh; min-height: 500px; display: flex; align-items: center; justify-content: center; position: relative;">
+  <video autoplay muted loop playsinline class="video-bg" style="width: 100%; height: 100%; object-fit: cover;">
+    <source src="/videos/test2.m4v" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  {{ else }}
   <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
 {{ end }}
-  <div class="container justify-center">
+
+  <div class="container justify-center" style="position: relative; z-index: 1; backdrop-filter: blur(10px); padding: 20px; border-radius: 10px; background: rgba(255, 255, 255, 0.5);">
+  <div class="container justify-center" style="position: relative; z-index: 1;">
     <div class="row items-center justify-between">
       <div class="row items-center justify-center">
-        <div class="lg:col-12 md:col-12 mb-8 justify-center text-center ">
+        <div class="lg:col-12 md:col-12 mb-8 justify-center text-center">
           <h1 class="mb-4 text-h3 lg:text-h1">
             {{ .title | markdownify }}
           </h1>
           <h3 class="mb-8">
             {{ .subtitle | markdownify }}
           </h3>
-          {{/*  Make this narrower  */}}
           <div class="mb-8 text-center text-2xl" style="width: 75%; margin: 0 auto;">
             {{ .content | markdownify }}
           </div>
-        <ul>
-          {{ range .bulletpoints }}
-            <li class="relative mb-4 pl-6">
-              {{/*  <i class="fa fa-check absolute left-0 top-1.5"></i>  */}}
-              {{ . | markdownify }}
-            </li>
+          <ul>
+            {{ range .bulletpoints }}
+              <li class="relative mb-4 pl-6">
+                {{ . | markdownify }}
+              </li>
+            {{ end }}
+          </ul>
+          {{ with .button }}
+            {{ if .enable }}
+              <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                {{ .label }}
+                <i class="fa fa-arrow-right pl-2"></i>
+              </a>
+            {{ end }}
           {{ end }}
-        </ul>
-        {{ with .button }}
-          {{ if .enable }}
-            <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-              {{ .label }}
-              <i class="fa fa-arrow-right pl-2"></i>
-            </a>
-          {{ end }}
-        {{ end }}
-        {{/*  make a table to display a service schedule from a yaml file  */}}
-        {{ with .table }}
-          {{ if .title }}
-          <h3 class="mt-8 mb-4">
-            {{ .title | markdownify }}
-          </h3>
-          {{ end }}
-          {{ if .content }}
-          <p class="mt-8 mb-4 text-left">
-            {{ .content | markdownify }}
-          </p>
-          {{ end }}
-          <table class="table schedule-table" style="width: 75%; margin: 0 auto; margin-top: 2rem;">
-            <col><col>
-            {{ with .header }}
-            {{ if .enable}}
-            <thead>
-              <tr>
-                {{ range .values }}
-                  <th>{{ . }}</th>
+          {{ with .table }}
+            {{ if .title }}
+              <h3 class="mt-8 mb-4">
+                {{ .title | markdownify }}
+              </h3>
+            {{ end }}
+            {{ if .content }}
+              <p class="mt-8 mb-4 text-left">
+                {{ .content | markdownify }}
+              </p>
+            {{ end }}
+            <table class="table schedule-table" style="width: 75%; margin: 0 auto; margin-top: 2rem;">
+              <col><col>
+              {{ with .header }}
+                {{ if .enable }}
+                  <thead>
+                    <tr>
+                      {{ range .values }}
+                        <th>{{ . }}</th>
+                      {{ end }}
+                    </tr>
+                  </thead>
                 {{ end }}
-              </tr>
-            </thead>
-            {{ end }}
-            {{ end }}
-            <tbody>
-              {{ range .rows }}
-                <tr>
-                  {{ range .columns }}
-                    <td>{{ . }}</td>
-                  {{ end }}
-                </tr>
               {{ end }}
-            </tbody>
-          </table>
-        {{ end }}
-        
+              <tbody>
+                {{ range .rows }}
+                  <tr>
+                    {{ range .columns }}
+                      <td>{{ . }}</td>
+                    {{ end }}
+                  </tr>
+                {{ end }}
+              </tbody>
+            </table>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ if .backgroundImage }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{ with .Params.socials }}
+<!-- Socials Panel -->
+<section class="section-sm bg-slate-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="mb-4 text-center">{{ .title }}</h2>
+        <div class="social-icons text-center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/eschaskovo?igsh=MWxzb3d5ZHQ5ZWg3eg==" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width: 300px; height: 420px;">
+          </blockquote>
+          <div class="fb-page" data-href="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr" data-tabs="timeline" data-width="300px" data-height="420px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <blockquote cite="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr">Евангелска съборна църква - Хасково</a></blockquote></div>
+          <lite-youtube videoid="X3LnCQ9fsPE" style="width: 300px; height:400px"></lite-youtube>
+        </div>
       </div>
     </div>
   </div>
 </section>
-{{ if .backgroundImage }}
-  </div>
-  {{ end }}
+<!-- /Socials Panel -->
 {{ end }}
-<!-- /Features -->
-  {{ range $i, $e:= .Params.features1 }}
-  {{ if .backgroundImage }}
-    <section rel="preload" fetchpriority="high" class="section-sm bg-image bg-cover bg-bottom bg-no-repeat bg-fixed" style="background-image: url({{ .backgroundImage | absURL }});">
-      <div class="blurred">
-      {{ else }}
-    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
-  {{ end }}
-      <div class="container">
-        <div class="row items-center justify-between">
-          <div
-            class="mb:md-0 {{ if not (modBool $i 2) }}
-              md:order-2
-            {{ end }} md:col-5 mb-6">
-            {{ if .image}}
-            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
-            {{ end }}
-          </div>
-          <div
-            class="{{ if not (modBool $i 2) }}
-              md:order-1
-            {{ end }} md:col-7 lg:col-6">
-            <h2 class="mb-4">
-              {{ .title | markdownify }}
-            </h2>
-            <p class="mb-8 text-lg">
-              {{ .content | markdownify }}
-            </p>
-            <ul>
-              {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  {{/*  <i class="fa fa-check absolute left-0 top-1.5"></i>  */}}
-                  {{ . | markdownify }}
-                </li>
-              {{ end }}
-            </ul>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-                        {{/*  make a table to display a service schedule from a yaml file  */}}
-                        {{ with .table }}
-                        <h3 class="mt-8 mb-4">
-                          {{ .title | markdownify }}
-                        </h3>
-                        <table class="table mt-6 schedule-table">
-                          <thead>
-                            <tr>
-                              {{ range .header }}
-                                <th>{{ . }}</th>
-                              {{ end }}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {{ range .rows }}
-                              <tr>
-                                {{ range .columns }}
-                                  <td>{{ . }}</td>
-                                {{ end }}
-                              </tr>
-                            {{ end }}
-                          </tbody>
-                        </table>
-                      {{ end }}
-                      
-          </div>
+
+{{ with .Params.map }}
+<!-- Maps Panel -->
+<section class="section-sm bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="mb-4 text-center">{{ .title }}</h2>
+        <div class="map-container" style="position: relative; overflow: hidden; padding-top: 56.25%;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23743.164459614072!2d25.5132847!3d41.9380956!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ad50c13e2d8421%3A0x684a2c8e9fc28fe5!2z0JXQstCw0L3Qs9C10LvRgdC60LAg0KHRitCx0L7RgNC90LAg0KbRitGA0LrQstCwIC0g0KXQsNGB0LrQvtCy0L4!5e0!3m2!1sen!2sbg!4v1734999285883!5m2!1sen!2sbg&zoom=9"
+            width="600"
+            height="450"
+            style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
         </div>
       </div>
-    </section>
-    {{ if .backgroundImage }}
+    </div>
   </div>
-  {{ end }}
-  {{ end }}
-  <!-- /Features -->
-
-  <!-- Testimonials -->
-  {{ with site.GetPage "sections/testimonial" }}
-    {{ if .Params.enable }}
-      <section class="section">
-        <div class="container">
-          <div class="row">
-            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
-              <h2 class="mb-4">
-                {{ .Title | markdownify }}
-              </h2>
-              <p>
-                {{ .Params.description | markdownify }}
-              </p>
-            </div>
-            <div class="col-12">
-              <div class="swiper testimonial-slider">
-                <div class="swiper-wrapper">
-                  {{ range .Params.testimonials }}
-                    <div class="swiper-slide">
-                      <div
-                        class="bg-theme-light dark:bg-darkmode-theme-light rounded-lg px-7 py-10">
-                        <div class="text-dark dark:text-white">
-                          <svg
-                            width="33"
-                            height="20"
-                            viewBox="0 0 33 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M1.28375 19.41L0.79375 18.64C1.21375 17.0067 1.75042 15.07 2.40375 12.83C3.05708 10.5433 3.75708 8.28 4.50375 6.04C5.29708 3.75333 6.06708 1.77 6.81375 0.0899959H15.3538C14.9338 2.09666 14.4904 4.26667 14.0238 6.6C13.5571 8.88666 13.1371 11.15 12.7638 13.39C12.4371 15.5833 12.1571 17.59 11.9238 19.41H1.28375ZM31.69 0.0899959L32.18 0.859998C31.76 2.54 31.2233 4.5 30.57 6.74C29.9167 8.98 29.2167 11.2433 28.47 13.53C27.7233 15.77 26.9533 17.73 26.16 19.41H17.69C18.0167 17.9167 18.3433 16.33 18.67 14.65C18.9967 12.9233 19.3 11.22 19.58 9.54C19.9067 7.81333 20.1867 6.15667 20.42 4.57C20.7 2.93666 20.91 1.44333 21.05 0.0899959H31.69Z"
-                              fill="currentColor" />
-                          </svg>
-                        </div>
-                        <blockquote class="mt-8">
-                          {{ .content | markdownify }}
-                        </blockquote>
-                        <div class="mt-11 flex items-center">
-                          <div class="text-dark dark:text-white">
-                            {{ partial "image" (dict "Src" .avatar "Size" "50x50" "Class" "rounded-full" "Alt" .name) }}
-                          </div>
-                          <div class="ml-4">
-                            <h3 class="h5 font-primary font-semibold">
-                              {{ .name }}
-                            </h3>
-                            <p class="text-dark dark:text-white">
-                              {{ .designation | markdownify }}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  {{ end }}
-                </div>
-                <div
-                  class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    {{ end }}
-  {{ end }}
-  <!-- /Testimonials -->
-  {{ with .Params.socials}}
-  <!-- Socials Panel -->
-  <section class="section-sm bg-slate-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="mb-4 text-center">{{ .title }}</h2>
-          <div class="social-icons text-center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/eschaskovo?igsh=MWxzb3d5ZHQ5ZWg3eg==" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width: 300px; height: 420px;">
-            </blockquote>
-            <div class="fb-page" data-href="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr" data-tabs="timeline" data-width="300px" data-height="420px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-              <blockquote cite="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/p/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%81%D0%BA%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%80%D0%BD%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%A5%D0%B0%D1%81%D0%BA%D0%BE%D0%B2%D0%BE-100089587770848/?_rdr">Евангелска съборна църква - Хасково</a></blockquote></div>
-              <lite-youtube videoid="X3LnCQ9fsPE" style="width: 300px; height:400px"></lite-youtube>
-            </lite-youtube>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- /Socials Panel -->
-  {{ end }}
-
-  {{ with .Params.map}}
-  <!-- Maps Panel -->
-  <section class="section-sm bg-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="mb-4 text-center">{{ .title }}</h2>
-          <div class="map-container" style="position: relative; overflow: hidden; padding-top: 56.25%;">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23743.164459614072!2d25.5132847!3d41.9380956!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ad50c13e2d8421%3A0x684a2c8e9fc28fe5!2z0JXQstCw0L3Qs9C10LvRgdC60LAg0KHRitCx0L7RgNC90LAg0KbRitGA0LrQstCwIC0g0KXQsNGB0LrQvtCy0L4!5e0!3m2!1sen!2sbg!4v1734999285883!5m2!1sen!2sbg&zoom=9"
-              width="600"
-              height="450"
-              style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-              allowfullscreen=""
-              loading="lazy">
-            </iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /Maps Panel -->
-  {{ end }}
+</section>
+<!-- /Maps Panel -->
+{{ end }}
 
 <style>
   @media (max-width: 768px) {
@@ -412,6 +193,5 @@
     }
   }
 </style>
-
 <script async src="//www.instagram.com/embed.js"></script>
 {{ end }}
