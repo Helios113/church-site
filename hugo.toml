@@ -62,7 +62,7 @@ target = 'assets/notwatching/hugo_stats.json'
 
 ############################# Outputs ############################
 [outputs]
-home = ["HTML", "RSS", "WebAppManifest"]
+home = ["HTML", "RSS", "WebAppManifest", "SearchIndex"]
 
 ############################# Imaging ############################
 [imaging]
@@ -81,8 +81,6 @@ maxAge = "720h"
 dir = ":resourceDir/_gen"
 maxAge = "720h"
 
-[donate]
-link = "/give"
 
 ############################ Markup ##############################
 [markup]
@@ -116,8 +114,6 @@ mediaType = "application/json"
 baseName = "searchindex"
 isPlainText = true
 notAlternative = true
-
-
 
 
 ############################# Plugins ##############################

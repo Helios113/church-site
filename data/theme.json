@@ -31,11 +31,10 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "sans-serif:wght@400;600",
+      "primary": "Heebo:wght@400;600",
       "primary_type": "sans-serif",
-      "secondary": "sans-serif:wght@500;700",
-      "secondary_type": "sans-serif",
-      "emoji": "Noto Color Emoji"
+      "secondary": "Signika:wght@500;700",
+      "secondary_type": "sans-serif"
     },
     "font_size": {
       "base": "16",

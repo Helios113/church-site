@@ -13,9 +13,11 @@ require (
 	github.com/gethugothemes/hugo-modules/components/social-share v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/gallery-slider v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/gzip-caching v0.0.0-20250213104422-d6c69545f20a // indirect
+	github.com/gethugothemes/hugo-modules/icons/font-awesome v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/images v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/modal v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/pwa v0.0.0-20250213104422-d6c69545f20a // indirect
+	github.com/gethugothemes/hugo-modules/search v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/seo-tools/basic-seo v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/seo-tools/site-verifications v0.0.0-20250213104422-d6c69545f20a // indirect
@@ -23,5 +25,7 @@ require (
 	github.com/gethugothemes/hugo-modules/shortcodes/notice v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/tab v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/gethugothemes/hugo-modules/table-of-contents v0.0.0-20250213104422-d6c69545f20a // indirect
+	github.com/gethugothemes/hugo-modules/videos v0.0.0-20250213104422-d6c69545f20a // indirect
 	github.com/hugomods/mermaid v0.1.4 // indirect
+	github.com/zeon-studio/hugoplate v0.0.0-20250216061936-eafce894f6e0 // indirect
 )

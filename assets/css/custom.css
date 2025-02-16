@@ -1,2 +1,79 @@
-/* DO NOT WRITE ANY STYLE IN THIS FILE */
-/* If you want to add your own styles, please write it in the `./assets/css/custom.css` file. */
+/* Add your own custom styles here */
+.service-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // color: ;
+    padding: 10px 20px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #C32D2D;
+    @apply text-white dark:bg-orange-900 font-primary leading-relaxed dark:text-darkmode-text
+}
+
+.blurred {
+    width: fit-content;
+    block-size: fit-content;
+    // @apply text-base bg-opacity-40 dark:bg-darkmode-bg
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 20px 30px;
+    @apply bg-white dark:bg-dark
+}
+
+
+.schedule-table {
+    border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+    // border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.schedule-table th {
+    // background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.schedule-table td:first-child {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.schedule-table td:nth-child(2) {
+    // font-weight: bold;
+    font-size: 2rem;
+}
+
+.schedule-table tr {
+
+    border-bottom: 2px solid black;
+}
+
+.btn {
+    @apply inline-block rounded border border-transparent px-5 py-2 font-semibold transition;
+}
+
+.btn-sm {
+    @apply rounded-sm px-4 py-1.5 text-sm;
+}
+
+.btn-primary {
+    background-color: #C32D2D;
+
+    &:hover {
+        background-color: #c93f15;
+        color: #fff;
+    }
+
+    @apply text-white dark:bg-orange-900 font-primary leading-relaxed dark:text-darkmode-text
+}
+
+.btn-outline-primary {
+    @apply border-dark text-dark hover:bg-dark dark:hover:text-dark bg-transparent hover:text-white dark:border-darkmode-primary dark:text-white dark:hover:bg-darkmode-primary;
+}

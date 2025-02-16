@@ -19,8 +19,7 @@
 
 <!-- main script -->
 {{ $scripts = $scripts | append (resources.Get "js/main.js") }}
-{{ $scripts = $scripts | append (resources.Get "js/bgt.js") }}
-
+{{/*  {{ $scripts = $scripts | append (resources.Get "js/bgt.js") }}  */}}
 {{ $scripts = $scripts | resources.Concat "js/script.js" }}
 
 {{ $scriptsLazy = $scriptsLazy | resources.Concat "js/script-lazy.js" }}
@@ -47,7 +46,7 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v21.0"></script>
 <script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/youtube.xml&up_channel=ecchaskovo&synd=open&w=320&h=390&title=&border=%23ffffff%7C3px%2C1px+solid+%23999999&output=js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
-  
+    
 <!-- progressive web app -->
 {{ partialCached "pwa.html" . }}
 
