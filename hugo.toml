@@ -111,11 +111,11 @@ suffixes = ["webmanifest"]
 mediaType = "application/manifest+json"
 rel = "manifest"
 
-# [outputFormats.SearchIndex]
-# mediaType = "application/json"
-# baseName = "searchindex"
-# isPlainText = true
-# notAlternative = true
+[outputFormats.SearchIndex]
+mediaType = "application/json"
+baseName = "searchindex"
+isPlainText = true
+notAlternative = true
 
 
 
@@ -123,21 +123,21 @@ rel = "manifest"
 ############################# Plugins ##############################
 
 # CSS Plugins
-# [[params.plugins.css]]
-# link = "plugins/swiper/swiper-bundle.css"
-# lazy = true
-# [[params.plugins.css]]
-# link = "plugins/glightbox/glightbox.css"
-# lazy = true
-# [[params.plugins.css]]
-# link = "plugins/font-awesome/v6/brands.css"
-# lazy = true
-# [[params.plugins.css]]
-# link = "plugins/font-awesome/v6/solid.css"
-# lazy = true
-# [[params.plugins.css]]
-# link = "plugins/font-awesome/v6/icons.css"
-# lazy = true
+[[params.plugins.css]]
+link = "plugins/swiper/swiper-bundle.css"
+lazy = true
+[[params.plugins.css]]
+link = "plugins/glightbox/glightbox.css"
+lazy = true
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/brands.css"
+lazy = true
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/solid.css"
+lazy = true
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/icons.css"
+lazy = true
 
 # JS Plugins
 [[params.plugins.js]]

@@ -23,7 +23,7 @@
   @import "./utilities.css";
 }
 
-@import "search.css";
+/* @import "search.css"; */
 @import "social-share.css";
 @import "gallery-slider.css";
 @import "images.css";

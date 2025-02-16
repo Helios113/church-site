@@ -1,6 +1,5 @@
 ---
 title: "What does Evangelical mean?"
-emoji: "🤔"
 meta_title: "evangelism"
 description: "this is meta description"
 image: "/images/avatar.png"
