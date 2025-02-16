@@ -6,13 +6,13 @@
 # url = "/"
 # weight = 1
 
-[[main]]
-name = "About"
-url = "/about"
-weight = 3
+# [[main]]
+# name = "About"
+# url = "/about"
+# weight = 3
 
 [[main]]
-parent = "About"
+# parent = "About"
 name = "History"
 url = "/history"
 weight = 3
@@ -28,13 +28,13 @@ url = "/howto"
 weight = 2  
 
 [[main]]
-parent = "About"
+# parent = "About"
 name = "Beliefs"
 url = "/beliefs"
 weight = 5
 
 [[main]]
-parent = "About"
+# parent = "About"
 name = "Contact"
 url = "/contact"
 weight = 6

@@ -6,13 +6,12 @@
 # url = "/"
 # weight = 1
 
-[[main]]
-name = "За нас"
-url = "/about"
-weight = 3
+# [[main]]
+# name = "За нас"
+# url = "/about"
+# weight = 3
 
 [[main]]
-parent = "За нас"
 name = "История"
 url = "/history"
 weight = 4
@@ -28,13 +27,11 @@ url = "/howto"
 weight = 2
 
 [[main]]
-parent = "За нас"
 name = "Убеждения"
 url = "/beliefs"
 weight = 5
 
 [[main]]
-parent = "За нас"
 name = "Контакти"
 url = "/contact"
 weight = 6
