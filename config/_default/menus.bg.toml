@@ -21,10 +21,10 @@ name = "Какво е Евангелизъм?"
 url = "/evangelism"
 weight = 1
 
-[[main]]
-name = "Как да дойда на църква?"
-url = "/howto"
-weight = 2
+# [[main]]
+# name = "Как да дойда на църква?"
+# url = "/howto"
+# weight = 2
 
 [[main]]
 name = "Убеждения"

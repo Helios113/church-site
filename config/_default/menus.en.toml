@@ -22,10 +22,10 @@ name = "What is Evangelicalism?"
 url = "/evangelism"
 weight = 1  
 
-[[main]]
-name = "How to come to church?"
-url = "/howto"
-weight = 2  
+# [[main]]
+# name = "How to come to church?"
+# url = "/howto"
+# weight = 2  
 
 [[main]]
 # parent = "About"

@@ -1,0 +1,44 @@
+[contactInformation]
+other = "Contact Information"
+
+[addressCallsEmails]
+other = "Please address your calls/emails to the Evangelical Church."
+
+[telephone]
+other = "Telephone"
+
+[email]
+other = "Email"
+
+[address]
+other = "Address"
+
+[openingHours]
+other = "Opening Hours"
+
+[fullName]
+other = "Full Name"
+
+[fullNamePlaceholder]
+other = "John Doe"
+
+[workingMail]
+other = "Working Mail"
+
+[workingMailPlaceholder]
+other = "john.doe@email.com"
+
+[anythingElse]
+other = "Anything else?"
+
+[messagePlaceholder]
+other = "Message goes here..."
+
+[submit]
+other = "Submit"
+
+[contactFormTitle]
+other = "Contact Form"
+
+[navigation_button]
+other = "Give"

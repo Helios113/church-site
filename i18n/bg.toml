@@ -1,0 +1,44 @@
+[contactInformation]
+other = "Контактна информация"
+
+[addressCallsEmails]
+other = "Моля, адресирайте вашите обаждания/имейли до Евангелската църква."
+
+[telephone]
+other = "Телефон"
+
+[email]
+other = "Имейл"
+
+[address]
+other = "Адрес"
+
+[openingHours]
+other = "Работно време"
+
+[fullName]
+other = "Пълно име"
+
+[fullNamePlaceholder]
+other = "Иван Иванов"
+
+[workingMail]
+other = "Работещ имейл"
+
+[workingMailPlaceholder]
+other = "ivan.ivanov@email.com"
+
+[anythingElse]
+other = "Нещо друго?"
+
+[messagePlaceholder]
+other = "Съобщението се пише тук..."
+
+[submit]
+other = "Изпрати"
+
+[contactFormTitle]
+other = "Формуляр за контакт"
+
+[navigation_button]
+other = "Дари"
