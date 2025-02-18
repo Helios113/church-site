@@ -19,8 +19,8 @@
 #     link: "https://github.com/zeon-studio/hugoplate"
 dates:
   services: 
-    - day: "Tuesday"
-      time: "19:00"
+    - day: "Wednesday"
+      time: "17:00"
     - day: "Sunday"
       time: "10:00"
   date_format: "bg"
@@ -78,7 +78,7 @@ features:
         values: ["", ""]
       rows: [
         columns: ["Ежедневно работно време: ","10:00 - 17:00"],
-        columns: ["Молитвено събрание: ","вторник в 18:00"],
+        columns: ["Изучаване на Библията: ","сряда в 17:00"],
         columns: ["Литургия с проповед: ","неделя в 10:00"],
       ]
 
