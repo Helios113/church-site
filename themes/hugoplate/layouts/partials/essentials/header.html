@@ -95,7 +95,7 @@
           </li>
         {{ end }}
       {{ end }}
-      {{ if site.Params.navigation_button.enable }}
+      {{/*  {{ if site.Params.navigation_button.enable }}
         <li class="mt-4 inline-block lg:hidden">
           <a
             class="btn btn-outline-primary btn-sm"
@@ -103,7 +103,7 @@
             {{ i18n "navigation_button" }}
           </a>
         </li>
-      {{ end }}
+      {{ end }}  */}}
     </ul>
 
     <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
@@ -135,7 +135,7 @@
       {{ if site.Params.navigation_button.enable }}
         <a
           href="{{ site.Params.navigation_button.link | relLangURL }}"
-          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          class="btn btn-primary btn-sm hidden lg:inline-block" style="margin-right: 1em;">
           {{ i18n "navigation_button" }}
         </a>
       {{ end }}

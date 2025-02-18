@@ -1,5 +1,6 @@
 .header {
-  @apply bg-body dark:bg-darkmode-body py-6;
+  font-size:1.5rem;
+  @apply bg-body dark:bg-darkmode-body py-6 ;
 }
 
 /* navbar items */
