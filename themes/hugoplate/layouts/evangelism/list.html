@@ -1,39 +1,7 @@
 {{ define "main" }}
     {{ partial "page-header" . }}
-
-  <div class="container">
-      {{/*  <div class="inline">  */}}
-        {{/*  <h2 class="h2 mb-6 emoji">{{ .Params.Emoji }}</h2>  */}}
-        {{/*  <h2 class="h2 mb-6">{{ .Title }}</h2>  */}}
-      {{/*  </div>  */}}
-      <ul>
-      {{ range $i, $e:= .Params.Blocks}}
-        <li style="">
-                <div class="info-block" >
-                    {{/*  {{if not (modBool $i 2)}}
-                    {{if $e.emoji}}
-                        <h2 class="emoji" style="font-size: 8em;">{{ .emoji }}</h2>
-                    {{end}}  
-                    {{end}}  */}}
-                    <div style="flex-direction: column; display: flex; ">   
-                    <h3 class="h3 mb-6">{{ $e.title | markdownify}}</h3>
-                    <p>{{ $e.content }}</p>
-                    {{ if $e.bulletpoints}}
-                        <ul>
-                            {{ range $e.bulletpoints }}
-                            <li style="font-size: 1.3em;">{{ . }}</li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                    </div>
-                    {{/*  {{if (modBool $i 2)}}
-                    {{if $e.emoji}}
-                        <h2 class="emoji" style="font-size: 8em;">{{ .emoji }}</h2>
-                    {{end}}  
-                    {{end}}  */}}
-                </div>    
-        </li>
-        {{ end }}
-    </ul>
-</div>
+    <div class="container flex flex-col min-h-screen h-full">
+      <div class="content">{{ .Content }}</div>
+      <div class="flex-grow h-full"></div>
+    </div>
 {{ end }}

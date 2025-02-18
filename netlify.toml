@@ -5,6 +5,7 @@ command = "yarn project-setup; yarn build"
 [build.environment]
 HUGO_VERSION = "0.141.0"
 GO_VERSION = "1.23.3"
+
 [[redirects]]
     from = "/index.php"
     to = "/"
