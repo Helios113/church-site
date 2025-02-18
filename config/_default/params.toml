@@ -63,9 +63,9 @@ content = "You must replace the **baseURL** in **hugo.toml** file when deploying
 # seo meta data for OpenGraph / Twitter Card
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
-keywords = ["Boilerplate", "Hugo"]
-description = "Hugo & Tailwindcss Starter"
-author = "zeon.studio"
+keywords = ["church", "haskovo", "evangelical", "църква", "хасково", "евангелска"]
+description = "Евангелска Съборна Църква, Хасково"
+author = "Abbie and Preslav"
 twitter = "zeon_studio"
 image = "images/og-image.png"
 
