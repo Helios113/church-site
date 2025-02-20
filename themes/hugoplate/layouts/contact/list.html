@@ -82,6 +82,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var referrer = document.referrer;
+      alert(referrer);
       if (referrer.includes("airform")) {
         document.getElementById("contact-form-container").style.display = "none";
         document.getElementById("success-message").style.display = "block";
