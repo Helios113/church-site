@@ -13,7 +13,8 @@
   {{ $pageTranslations.Set .Language.Lang .Permalink }}
 {{ end }}
 
-<select class="{{ $class }}" onchange="location = this.value">
+<label for="language-select" class="sr-only">Select Language</label>
+<select id="language-select" class="{{ $class }}" onchange="location = this.value">
   {{ range site.Languages }}
     {{/* Fill the dropdown with all known languages */}}
     {{ $link := $pageTranslations.Get .Lang }}
