@@ -29,7 +29,7 @@ other = "Работещ имейл"
 other = "ivan.ivanov@email.com"
 
 [anythingElse]
-other = "Нещо друго?"
+other = "Събощение"
 
 [messagePlaceholder]
 other = "Съобщението се пише тук..."
@@ -42,3 +42,9 @@ other = "Формуляр за контакт"
 
 [navigation_button]
 other = "Дари"
+
+[contactFormExplanation]
+other = "Ако желаете, можете да изпратите съобщение директно до църквата, използвайки формуляра по-долу:"
+
+[successMessage]
+other = "Благодарим ви за съобщението. Ще се свържем с вас скоро."
