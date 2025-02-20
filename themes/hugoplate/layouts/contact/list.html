@@ -31,10 +31,12 @@
     <div class="container">
       <div class="row">
         <div class="md:col-10 lg:col-6 mx-auto">
-          <h2 class="mt-12">{{ i18n "contactFormTitle" }}</h2>
-          <p style="font-size: 1.2em;">{{ i18n "contactFormExplanation" }}</p>
+          <div id="contact-form-header">
+            <h2 class="mt-12">{{ i18n "contactFormTitle" }}</h2>
+            <p style="font-size: 1.2em;">{{ i18n "contactFormExplanation" }}</p>
+          </div>
           <div id="contact-form-container">
-            <form action="{{ site.Params.contact_form_action }}" method="POST" class="mt-6">
+            <form id="contact-form" action="{{ site.Params.contact_form_action }}" method="POST" class="mt-6">
               <div class="mb-6">
                 <label for="name" class="form-label">
                   {{ i18n "fullName" }} <span class="text-red-500">*</span>
@@ -71,8 +73,11 @@
               <button type="submit" class="btn btn-primary">{{ i18n "submit" }}</button>
             </form>
           </div>
-          <div id="success-message" style="display: none;">
-            <p>{{ i18n "successMessage" }}</p>
+          <div id="success-message" style="display: none; min-height: 400px; display: none; align-items: center; justify-content: center;">
+            <div>
+              <h2>✅ {{ i18n "successMessageTitle" }}</h2>
+              <p>{{ i18n "successMessage" }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -81,12 +86,15 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      var referrer = document.referrer;
-      alert(referrer);
-      if (referrer.includes("airform")) {
-        document.getElementById("contact-form-container").style.display = "none";
-        document.getElementById("success-message").style.display = "block";
-      }
+      var form = document.getElementById("contact-form");
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        setTimeout(function() {
+          document.getElementById("contact-form-header").style.display = "none";
+          document.getElementById("contact-form-container").style.display = "none";
+          document.getElementById("success-message").style.display = "flex";
+        }, 1000);
+      });
     });
   </script>
 

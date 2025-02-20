@@ -48,3 +48,6 @@ other = "Give"
 
 [successMessage]
 other = "Thank you for your message. We will get back to you soon."
+
+[successMessageTitle]
+other = "Success"
