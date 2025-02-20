@@ -7,13 +7,19 @@ quote: '"Each of you should give what you have decided in your heart to give, no
 — 2 Corinthians 9:7'
 ---
 
-
-##### If you wish to support the ministries and activities of our church, you can make a donation to the following bank account:
+<font size="5">If you wish to support the ministries and activities of our church, you can make a donation to the following bank account:</font>
 
 ## Details:
-#### IBAN: BG89FINV915020UB490078
-#### Account Holder: Evangelical Congregational Church - Haskovo
 
+<table>
+  <tr>
+    <td><strong>IBAN:</strong></td>
+    <td id="iban">BG89FINV915020UB490078</td>
+  </tr>
+  <tr>
+    <td><strong>Account Holder:</strong></td>
+    <td>Evangelical Congregational Church - Haskovo</td>
+  </tr>
+</table>
 
-Your support helps spread the Gospel, our social initiatives, and the development of church activities. Thank you for your generosity and compassion!
-
+<font size="5">Your support helps spread the Gospel, our social initiatives, and the development of church activities. Thank you for your generosity and compassion!</font>
