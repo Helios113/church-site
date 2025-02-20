@@ -45,13 +45,13 @@
     return nextService;
   }
 
-  function displayNextServiceDate() {
+  async function displayNextServiceDate() {
     const nextServiceDate = getNextServiceDate(services);
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
     document.getElementById("next-service-date").textContent = `{{ .text }}: ${nextServiceDate.toLocaleDateString("{{ .date_format }}", options)}`;
   }
 
-  displayNextServiceDate();
+  document.addEventListener("DOMContentLoaded", displayNextServiceDate);
 </script>
 {{ end }}
 
