@@ -1,0 +1,15 @@
+{{ define "main" }}
+    {{ partial "page-header" . }}
+    <div class="container flex flex-col min-h-screen h-full">
+      <div class="content">{{ .Content }}</div>
+      <div class="mt-8 p-4 bg-gray-100 rounded shadow">
+        <blockquote class="text-xl italic text-center">
+          {{ .Params.quote }}
+        </blockquote>
+      </div>
+      <div class="flex-grow h-full"></div>
+
+    </div>
+    </div>
+    
+{{ end }}
