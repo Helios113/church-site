@@ -89,11 +89,23 @@
       var form = document.getElementById("contact-form");
       form.addEventListener("submit", function(event) {
         event.preventDefault();
-        setTimeout(function() {
-          document.getElementById("contact-form-header").style.display = "none";
-          document.getElementById("contact-form-container").style.display = "none";
-          document.getElementById("success-message").style.display = "flex";
-        }, 3000);
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", form.action, true);
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            setTimeout(function() {
+              document.getElementById("contact-form-header").style.display = "none";
+              document.getElementById("contact-form-container").style.display = "none";
+              document.getElementById("success-message").style.display = "flex";
+            }, 3000);
+          }
+        };
+        xhr.onerror = function() {
+          // Handle error
+          alert('There was an error submitting the form.');
+        };
+        xhr.send(formData);
       });
     });
   </script>
