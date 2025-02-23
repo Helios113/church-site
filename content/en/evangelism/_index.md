@@ -1,7 +1,7 @@
 ---
 title: "What is Evangelism?"
 meta_title: "evangelism"
-description: "this is meta description"
+description: "Learn more about evangelism and its significance in the Christian faith. Evangelism is the spreading of the good news about Jesus Christ and salvation. Discover how evangelism has influenced the history and culture of Bulgaria and the world."
 image: "/images/avatar.png"
 draft: false
 ---

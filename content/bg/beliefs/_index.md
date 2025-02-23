@@ -1,7 +1,7 @@
 ---
 title: "Убеждения"
 meta_title: "Beliefs"
-description: "this is meta description"
+description: "Научете повече за убежденията на Евангелска Съборна Църква Хасково. Ние вярваме в Библията, Исус Христос и Светия Дух. Присъединете се към нашата християнска общност и открийте радостта от вярата."
 image: "/images/avatar.png"
 draft: false
 ---

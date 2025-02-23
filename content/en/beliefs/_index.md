@@ -1,7 +1,7 @@
 ---
 title: "Beliefs"
 meta_title: "Beliefs"
-description: "this is meta description"
+description: "Learn more about the beliefs of the Evangelical Congregational Church in Haskovo. We believe in the Bible, Jesus Christ, and the Holy Spirit. Join our Christian community and discover the joy of faith."
 image: "/images/avatar.png"
 draft: false
 ---
