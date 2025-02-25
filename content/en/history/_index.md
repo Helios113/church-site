@@ -1,7 +1,7 @@
 ---
 title: "About us"
 meta_title: "About"
-description: "Discover the history of the Evangelical Church in Haskovo. Learn about the significant figures and events that have shaped our church community. Read about the contributions of evangelists in Bulgaria and their role in the spiritual and cultural development of the country."
+description: "Discover the history of the Evangelical Bulgarian Church in Haskovo. Learn about the significant figures and events that have shaped our church community. Read about the contributions of evangelists in Bulgaria and their role in the spiritual and cultural development of the country."
 image: "/images/avatar.png"
 draft: false
 ---

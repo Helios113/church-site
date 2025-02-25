@@ -1,6 +1,6 @@
 ################ English language ##################
 [en]
-title = "Christian Church"
+title = "Evangelical Bulgarian Church"
 languageName = "🇬🇧"
 languageCode = "en-gb"
 contentDir = "content/en"
@@ -10,7 +10,7 @@ link = "/en/give"
 
 ################ Bulgarian language ##################
 [bg]
-title = "Християнска църква"
+title = "Евангелска българска църква"
 languageName = "🇧🇬"
 languageCode = "bg"
 contentDir = "content/bg"
