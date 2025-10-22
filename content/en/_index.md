@@ -19,8 +19,8 @@
 #     link: "https://github.com/zeon-studio/hugoplate"
 dates:
   services: 
-    - day: "Tuesday"
-      time: "19:00"
+    # - day: "Tuesday"
+    #   time: "19:00"
     - day: "Sunday"
       time: "10:00"
   date_format: "en"
