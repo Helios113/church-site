@@ -28,6 +28,7 @@ dates:
 
 map:
   title: "Map"
+  mapFacade: "/images/map.webp"
 # Features
 socials:
   title: "Social Media"
@@ -55,6 +56,7 @@ features:
       label: "What is Evangelicalism?"
       link: "/en/evangelism"
   - title: "We would love to meet you!"
+    image: "/images/service-2.png"
     content: "The church is open **daily** for prayer, council or shelter. We also host **weekly** prayer meetings and worship services. Our gatherings are a great place to explore the Christian faith and meet fellow believers."
     bulletpoints:
     button:
@@ -68,10 +70,9 @@ features:
         enable: false
         values: ["", ""]
       rows: [
-        columns: ["Daily opening hours: ","09:00 - 17:00"],
-        columns: ["Prayer meeting: ","Tuesday 18:00"],
-        columns: ["Worship service: ","Sunday 10:00"],
-
+        columns: ["Daily opening hours: ","10:00 - 17:00"],
+        columns: ["Bible study: ","Wednesday at 17:00"],
+        columns: ["Worship service: ","Sunday at 10:00"],
       ]
 
 

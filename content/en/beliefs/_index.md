@@ -6,13 +6,45 @@ image: "/images/avatar.png"
 draft: false
 ---
 
-Our motto is **repent**—a transformed way of thinking that leads to a transformed way of living.
+Our motto is **repent** — a transformed way of thinking that leads to a transformed way of living.
 
-This is impossible without solid explanatory preaching and teaching based on biblical doctrines.
+This is impossible without solid expository preaching and teaching grounded in biblical doctrine.
 
-That is why, like all true Christians before us,  
+---
 
-we believe in one God, the Father Almighty, Creator of heaven and earth, of all things visible and invisible.
+## Foundations of Faith
+
+### The Bible
+
+We believe that the Bible — Old and New Testament — is the **inspired and infallible Word of God**. It is the only supreme authority on matters of faith and life. Every doctrine and practice in our church is examined and confirmed by Scripture.
+
+### God
+
+We believe in the **one living and true God**, eternal, all-knowing, all-powerful, and ever-present. He exists in three persons — **Father, Son, and Holy Spirit** — equal in nature, glory, and authority.
+
+### Jesus Christ
+
+We believe that Jesus Christ is **truly God and truly human**. He was incarnate by the Holy Spirit and born of the Virgin Mary. He lived a sinless life, died on the cross as a substitutionary sacrifice for our sins, rose bodily on the third day, and ascended into heaven. He will come again in glory to judge the living and the dead.
+
+### Salvation
+
+We believe that people are **sinful by nature** and cannot save themselves. Salvation is entirely **God's gift** — by grace alone, through faith alone, because of Christ alone. It cannot be earned by good works, rituals, or traditions.
+
+### The Holy Spirit
+
+We believe that the Holy Spirit is the **third person of the Trinity**. He convicts people of sin, grants new birth to believers, dwells in them, and sanctifies them, conforming them to the image of Christ.
+
+### The Church
+
+We believe in the **one, holy, universal, and apostolic Church** — comprised of all true believers of all times and places. The local church is the visible body of Christ, gathered for worship, the study of the Word, prayer, and mutual care.
+
+---
+
+## The Nicene Creed
+
+Like all true Christians before us, we confess:
+
+We believe in one God, the Father Almighty, Creator of heaven and earth, of all things visible and invisible.
 
 And in one Lord, Jesus Christ, the only Son of God, begotten of the Father before all ages: Light from Light, true God from true God, begotten, not made, of one essence with the Father, through whom all things were made.
 
@@ -32,8 +64,10 @@ We believe in one holy, universal, and apostolic Church.
 
 We confess one baptism for the forgiveness of sins.
 
-We look for the resurrection of the dead  
+We look for the resurrection of the dead and the life of the age to come. Amen.
 
-and the life of the age to come. Amen.
+---
 
-In detail, the church's theology follows the Westminster Confession of Faith.
+## The Westminster Confession of Faith
+
+In detail, the church's theology follows the [Westminster Confession of Faith](https://en.wikipedia.org/wiki/Westminster_Confession_of_Faith) — one of the most thorough and precise documents of Reformed Protestant theology, drawn up in 1646. It covers the doctrine of Scripture, God, soteriology (salvation), the Church, the sacraments, and last things.
