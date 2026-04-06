@@ -40,8 +40,6 @@ We believe in the **one, holy, universal, and apostolic Church** — comprised o
 
 ---
 
-## The Nicene Creed
-
 Like all true Christians before us, we confess:
 
 We believe in one God, the Father Almighty, Creator of heaven and earth, of all things visible and invisible.
@@ -68,6 +66,5 @@ We look for the resurrection of the dead and the life of the age to come. Amen.
 
 ---
 
-## The Westminster Confession of Faith
 
 In detail, the church's theology follows the [Westminster Confession of Faith](https://en.wikipedia.org/wiki/Westminster_Confession_of_Faith) — one of the most thorough and precise documents of Reformed Protestant theology, drawn up in 1646. It covers the doctrine of Scripture, God, soteriology (salvation), the Church, the sacraments, and last things.
