@@ -67,4 +67,4 @@ We look for the resurrection of the dead and the life of the age to come. Amen.
 ---
 
 
-In detail, the church's theology follows the [Westminster Confession of Faith](https://en.wikipedia.org/wiki/Westminster_Confession_of_Faith) — one of the most thorough and precise documents of Reformed Protestant theology, drawn up in 1646. It covers the doctrine of Scripture, God, soteriology (salvation), the Church, the sacraments, and last things.
+In detail, the church's theology follows the [Westminster Confession of Faith](https://en.wikipedia.org/wiki/Westminster_Confession_of_Faith) — one of the most thorough and precise documents of Reformed Protestant theology, drawn up in 1647. It covers the doctrine of Scripture, God, soteriology (salvation), the Church, the sacraments, and last things.
